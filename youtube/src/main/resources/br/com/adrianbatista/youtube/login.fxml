@@ -9,7 +9,7 @@
    <children>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button fx:id="btnOi" mnemonicParsing="false" onAction="#actionBtnOi" text="Oi">
+            <Button fx:id="btnlogin" mnemonicParsing="false" onAction="#login" text="Login">
                <HBox.margin>
                   <Insets right="5.0" />
                </HBox.margin>
