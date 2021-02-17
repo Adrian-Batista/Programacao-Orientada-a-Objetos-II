@@ -14,12 +14,7 @@ public class LoginController {
 	
 	@FXML
 	private void login() {
-		try {
-			App.setRoot("main");
-		} catch (IOException e) {
-			System.err.println("Erro ao carregar a Janela Principal!");
-		}
-			
+		App.setRoot("main");
 	}
 	
 	@FXML

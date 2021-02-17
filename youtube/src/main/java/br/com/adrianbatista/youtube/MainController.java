@@ -7,10 +7,6 @@ public class MainController {
 
     @FXML
     private void logout() {
-        try {
-			App.setRoot("login");
-		} catch (IOException e) {
-			System.err.println("Erro ao carregar a Janela de Login!");
-		}
+		App.setRoot("login");
     }
 }
