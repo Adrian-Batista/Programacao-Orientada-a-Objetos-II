@@ -24,16 +24,9 @@ public class LoginController {
 	
 	@FXML
 	private void register() {
-        try {
-        	Stage stage = new Stage();
-    		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("register.fxml"));
-			Scene scene = new Scene(fxmlLoader.load());
-	        stage.setScene(scene);
-	        stage.show();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		Stage stage = new Stage();
+	    stage.setScene(FXMLUtil.loadScene("register"));
+	    stage.show();
 	}
 
 }
