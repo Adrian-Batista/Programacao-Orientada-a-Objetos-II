@@ -14,6 +14,7 @@ public class LoginController {
 	
 	@FXML
 	private void login() {
+		App.changeResizable();
 		App.setRoot("main");
 	}
 	
@@ -21,6 +22,7 @@ public class LoginController {
 	private void register() {
 		Stage stage = new Stage();
 	    stage.setScene(FXMLUtil.loadScene("register"));
+	    stage.setResizable(false);
 	    stage.show();
 	}
 
