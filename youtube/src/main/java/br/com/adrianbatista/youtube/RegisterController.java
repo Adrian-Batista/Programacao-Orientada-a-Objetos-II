@@ -8,6 +8,12 @@ public class RegisterController {
 	
 	@FXML 
 	private Button btnReturn;
+	
+	@FXML
+	private void voltar(){
+	    Stage stage = (Stage) btnReturn.getScene().getWindow();
+	    stage.close();
+	}
 
 	@FXML
 	private void fechar(){

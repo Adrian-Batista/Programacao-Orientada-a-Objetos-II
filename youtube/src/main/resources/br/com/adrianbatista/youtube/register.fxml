@@ -29,7 +29,7 @@
                   <Insets right="10.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="btnReturn" mnemonicParsing="false" onAction="#fechar" text="Retornar">
+            <Button fx:id="btnReturn" mnemonicParsing="false" onAction="#voltar" text="Retornar">
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin>

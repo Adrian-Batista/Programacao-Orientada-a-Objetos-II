@@ -26,7 +26,7 @@ public class LoginController {
 	}
 	
 	@FXML
-	private void fechar(){
+	public void fechar(){
 	    Stage stage = (Stage) idExit.getScene().getWindow();
 	    stage.close();
 	}
