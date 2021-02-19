@@ -11,10 +11,12 @@ public class LoginController {
 	@FXML
 	private Button idExit;
 	
+	
 	@FXML
 	private void login() {
 		App.changeResizable();
 		App.setRoot("main");
+		App.enlarge();
 	}
 	
 	@FXML

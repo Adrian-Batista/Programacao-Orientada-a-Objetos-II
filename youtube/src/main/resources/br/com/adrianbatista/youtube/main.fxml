@@ -5,20 +5,36 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.adrianbatista.youtube.MainController">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #828282; -fx-border-color: #FF4500;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.adrianbatista.youtube.MainController">
    <children>
-      <MenuBar AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <MenuBar style="-fx-background-color: #FF4500;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
-          <Menu mnemonicParsing="false" text="Arquivo">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#logout" text="Sair" />
-            </items>
-          </Menu>
+          <Menu mnemonicParsing="false" text="Inicio" />
+            <Menu mnemonicParsing="false" text="Em Alta" />
+            <Menu mnemonicParsing="false" text="Músicas">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Sertanejo" />
+                  <MenuItem mnemonicParsing="false" text="Forró" />
+                  <MenuItem mnemonicParsing="false" text="Funk" />
+                  <MenuItem mnemonicParsing="false" text="MPB" />
+                  <MenuItem mnemonicParsing="false" text="Eletronica" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Jogos">
+              <items>
+                <MenuItem mnemonicParsing="false" text="RPG" />
+                  <MenuItem mnemonicParsing="false" text="Mundo Aberto" />
+                  <MenuItem mnemonicParsing="false" text="Guerra" />
+                  <MenuItem mnemonicParsing="false" text="Corrida" />
+                  <MenuItem mnemonicParsing="false" text="Ação e Aventura" />
+              </items>
+            </Menu>
           <Menu mnemonicParsing="false" text="Ajuda">
             <items>
               <MenuItem mnemonicParsing="false" text="Sobre" />
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" onAction="#logout" text="Sair" />
         </menus>
       </MenuBar>
    </children>
