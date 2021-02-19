@@ -1,16 +1,15 @@
 package br.com.adrianbatista.youtube;
 
-import java.io.IOException;
-
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class LoginController {
 	@FXML
 	private Button btnLogin;
+	
+	@FXML
+	private Button idExit;
 	
 	@FXML
 	private void login() {
@@ -25,5 +24,13 @@ public class LoginController {
 	    stage.setResizable(false);
 	    stage.show();
 	}
+	
+	@FXML
+	private void fechar(){
+	    Stage stage = (Stage) idExit.getScene().getWindow();
+	    stage.close();
+	}
+	
+	
 
 }

@@ -51,7 +51,7 @@
                </HBox.margin>
             </Button>
             <Button fx:id="btnRegister" mnemonicParsing="false" onAction="#register" text="Novo Usuario" />
-            <Button fx:id="idExit" mnemonicParsing="false" text="Sair">
+            <Button fx:id="idExit" mnemonicParsing="false" onAction="#fechar" text="Sair">
                <HBox.margin>
                   <Insets left="5.0" />
                </HBox.margin>

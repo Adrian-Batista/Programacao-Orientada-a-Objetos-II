@@ -37,5 +37,6 @@ public class App extends Application {
     	else
     		stage.setResizable(true);
     }
+    
 
 }
