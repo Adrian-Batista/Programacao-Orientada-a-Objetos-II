@@ -41,12 +41,12 @@
       </MenuBar>
       <TilePane alignment="CENTER" hgap="10.0" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
          <children>
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
+            <Button fx:id="id1" mnemonicParsing="false" text="1" />
+            <Button fx:id="id2" mnemonicParsing="false" text="2" />
+            <Button fx:id="id3" mnemonicParsing="false" text="3" />
+            <Button fx:id="id4" mnemonicParsing="false" text="4" />
+            <Button fx:id="id5" mnemonicParsing="false" text="5" />
+            <Button fx:id="id6" mnemonicParsing="false" text="6" />
          </children>
       </TilePane>
    </children>
