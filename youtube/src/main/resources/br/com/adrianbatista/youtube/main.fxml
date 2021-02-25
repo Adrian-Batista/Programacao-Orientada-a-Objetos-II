@@ -48,7 +48,10 @@
                                 <MenuItem mnemonicParsing="false" text="Sobre" />
                               </items>
                             </Menu>
-                              <Menu mnemonicParsing="false" onAction="#logout" text="Sair" />
+                              <Menu fx:id="idSair" mnemonicParsing="false" text="Sair">
+                                 <items>
+                                    <MenuItem fx:id="idSair" mnemonicParsing="false" onAction="#logout" text="Sair" />
+                                 </items></Menu>
                           </menus>
                         </MenuBar>
                         <TilePane hgap="150.0" prefHeight="542.0" prefWidth="893.0" vgap="50.0">

@@ -33,17 +33,27 @@ public class App extends Application {
     }
     
     public static void changeResizable() {
-    	if(stage.isResizable())
+    	if(stage.isResizable()) {
     		stage.setResizable(false);
-    	else
+    		stage.centerOnScreen();
+    	}else {
     		stage.setResizable(true);
+			stage.centerOnScreen();
+    	}
+    		
     }
     
     public static void enlarge() {
-    	if(stage.isMaximized())
+    	if(stage.isMaximized()) {
     		stage.setMaximized(false);
-    	else
+    		stage.centerOnScreen();
+    	}
+    		
+    	else {
     		stage.setMaximized(true);
+    		stage.setMaximized(false);
+    	}
+    		
     }
  
 }

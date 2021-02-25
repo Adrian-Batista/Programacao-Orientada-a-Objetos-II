@@ -14,8 +14,8 @@ public class LoginController {
 	
 	@FXML
 	private void login() {
-		App.changeResizable();
 		App.setRoot("main");
+		App.changeResizable();
 	}
 	
 	@FXML

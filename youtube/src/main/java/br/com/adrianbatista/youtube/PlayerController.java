@@ -20,5 +20,10 @@ public class PlayerController {
 	private void Pause() {
 		
 	}
+	
+	private void Return() {
+		App.setRoot("main");
+		App.changeResizable();
+	}
 
 }

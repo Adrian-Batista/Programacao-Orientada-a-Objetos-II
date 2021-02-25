@@ -2,19 +2,19 @@ package br.com.adrianbatista.youtube;
 
 import javafx.fxml.FXML;
 
-public class MainController {
+public class MainController {	
 	
 	
 	@FXML
 	private void logout() {
-		App.changeResizable();
 		App.setRoot("login");
+		App.changeResizable();
 	}
 	
 	@FXML
 	private void player() {
-		App.changeResizable();
 		App.setRoot("play");
+		App.changeResizable();
 	}
 
    }

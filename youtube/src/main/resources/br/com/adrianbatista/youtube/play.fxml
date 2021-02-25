@@ -7,24 +7,34 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.adrianbatista.youtube.PlayerController">
    <children>
-      <VBox alignment="TOP_CENTER" layoutX="-14.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox alignment="CENTER" layoutX="-14.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <ImageView fitHeight="300.0" fitWidth="580.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
                <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" text="Play" textAlignment="CENTER">
+                  <Button alignment="CENTER" mnemonicParsing="false" prefWidth="100.0" text="Play" textAlignment="CENTER">
                      <HBox.margin>
                         <Insets right="15.0" />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" text="Pause" textAlignment="CENTER" />
+                  <Button alignment="CENTER" mnemonicParsing="false" prefWidth="100.0" text="Pause" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets right="15.0" />
+                     </HBox.margin></Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" prefWidth="100.0" text="Return">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
                </children>
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
             </HBox>
          </children>
       </VBox>
