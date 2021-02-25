@@ -57,7 +57,7 @@
                                  <children>
                                     <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../../../../fotos/youtube.png" />
+                                          <Image url="@../../../../../../fotos/youtube.png" />
                                        </image>
                                        <HBox.margin>
                                           <Insets left="25.0" right="25.0" />
@@ -74,7 +74,7 @@
                                  <children>
                                     <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../../../../fotos/youtube.png" />
+                                          <Image url="@../../../../../../fotos/youtube.png" />
                                        </image>
                                        <HBox.margin>
                                           <Insets left="25.0" right="25.0" />
@@ -91,7 +91,7 @@
                                  <children>
                                     <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../../../../fotos/youtube.png" />
+                                          <Image url="@../../../../../../fotos/youtube.png" />
                                        </image>
                                        <HBox.margin>
                                           <Insets left="25.0" right="25.0" />
@@ -108,7 +108,7 @@
                                  <children>
                                     <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../../../../fotos/youtube.png" />
+                                          <Image url="@../../../../../../fotos/youtube.png" />
                                        </image>
                                        <HBox.margin>
                                           <Insets left="25.0" right="25.0" />
@@ -125,7 +125,7 @@
                                  <children>
                                     <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../../../../fotos/youtube.png" />
+                                          <Image url="@../../../../../../fotos/youtube.png" />
                                        </image>
                                        <HBox.margin>
                                           <Insets left="25.0" right="25.0" />
@@ -142,7 +142,7 @@
                                  <children>
                                     <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../../../../fotos/youtube.png" />
+                                          <Image url="@../../../../../../fotos/youtube.png" />
                                        </image>
                                        <HBox.margin>
                                           <Insets left="25.0" right="25.0" />
@@ -159,7 +159,7 @@
                                  <children>
                                     <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../../../../fotos/youtube.png" />
+                                          <Image url="@../../../../../../fotos/youtube.png" />
                                        </image>
                                        <HBox.margin>
                                           <Insets left="25.0" right="25.0" />
