@@ -12,16 +12,11 @@ public class PlayerController {
 	@FXML
 	private Button btnPause;
 	
+	@FXML
+	private Button btnReturn;
 	
-	private void Play() {
-		
-	}
-	
-	private void Pause() {
-		
-	}
-	
-	private void Return() {
+	@FXML
+	private void retornar() {
 		App.setRoot("main");
 		App.changeResizable();
 	}
