@@ -46,19 +46,19 @@
             <content>
               <AnchorPane style="-fx-background-color: #CDC9A5;">
                      <children>
-                        <TilePane hgap="100.0" style="-fx-background-color: #CDC9A5;" tileAlignment="TOP_LEFT" vgap="50.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TilePane hgap="100.0" style="-fx-background-color: #696969;" tileAlignment="TOP_LEFT" vgap="50.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <Button fx:id="v1" alignment="CENTER" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #FF0000;" text="Vídeo 1" />
                               <Button fx:id="v2" alignment="CENTER" layoutX="25.0" layoutY="25.0" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #FF0000;" text="Vídeo 2" />
                               <Button fx:id="v3" alignment="CENTER" layoutX="10.0" layoutY="72.0" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #FF0000;" text="Vídeo 3" />
-                              <Button fx:id="v4" alignment="CENTER" layoutX="10.0" layoutY="134.0" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" text="Vídeo 4" />
-                              <Button fx:id="v5" alignment="CENTER" layoutX="10.0" layoutY="196.0" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" text="Vídeo 5" />
-                              <Button fx:id="v6" alignment="CENTER" layoutX="10.0" layoutY="258.0" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" text="Vídeo 6" />
-                              <Button fx:id="v7" alignment="CENTER" layoutX="225.0" layoutY="125.0" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" text="Vídeo 7" />
-                              <Button fx:id="v8" alignment="CENTER" layoutX="425.0" layoutY="125.0" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" text="Vídeo 8" />
-                              <Button fx:id="v9" alignment="CENTER" layoutX="625.0" layoutY="125.0" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" text="Vídeo 9" />
-                              <Button fx:id="v10" alignment="CENTER" layoutX="25.0" layoutY="225.0" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" text="Vídeo 10" />
-                              <Button fx:id="v11" alignment="CENTER" layoutX="225.0" layoutY="225.0" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" text="Vídeo 11" />
+                              <Button fx:id="v4" alignment="CENTER" layoutX="10.0" layoutY="134.0" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #FF0000;" text="Vídeo 4" />
+                              <Button fx:id="v5" alignment="CENTER" layoutX="10.0" layoutY="196.0" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #FF0000;" text="Vídeo 5" />
+                              <Button fx:id="v6" alignment="CENTER" layoutX="10.0" layoutY="258.0" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #FF0000;" text="Vídeo 6" />
+                              <Button fx:id="v7" alignment="CENTER" layoutX="225.0" layoutY="125.0" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #FF0000;" text="Vídeo 7" />
+                              <Button fx:id="v8" alignment="CENTER" layoutX="425.0" layoutY="125.0" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #FF0000;" text="Vídeo 8" />
+                              <Button fx:id="v9" alignment="CENTER" layoutX="625.0" layoutY="125.0" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #FF0000;" text="Vídeo 9" />
+                              <Button fx:id="v10" alignment="CENTER" layoutX="25.0" layoutY="225.0" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #FF0000;" text="Vídeo 10" />
+                              <Button fx:id="v11" alignment="CENTER" layoutX="225.0" layoutY="225.0" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #828282; -fx-border-color: #FF0000;" text="Vídeo 11" />
                            </children>
                            <padding>
                               <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
