@@ -19,6 +19,7 @@ public class App extends Application {
     public void start(Stage stage){
     	this.stage = stage;
         stage.setScene(FXMLUtil.loadScene("login"));
+        this.centralizar();
         this.changeResizable();
         
         stage.show();
@@ -35,12 +36,14 @@ public class App extends Application {
     public static void changeResizable() {
     	if(stage.isResizable()) {
     		stage.setResizable(false);
-    		stage.centerOnScreen();
     	}else {
     		stage.setResizable(true);
-			stage.centerOnScreen();
     	}
     		
+    }
+    
+    public static void centralizar() {
+    	stage.centerOnScreen();
     }
     
     public static void enlarge() {

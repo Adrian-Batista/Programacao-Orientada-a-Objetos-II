@@ -13,15 +13,15 @@
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" style="-fx-background-color: #828282; -fx-border-color: #FF4500;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.adrianbatista.youtube.MainController">
+<AnchorPane prefHeight="400.0" style="-fx-background-color: #828282; -fx-border-color: #FF4500;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.adrianbatista.youtube.MainController">
    <children>
-      <ScrollPane style="-fx-background-color: #828282;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ScrollPane hbarPolicy="NEVER" style="-fx-background-color: #828282;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <content>
-          <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="800.0">
+          <AnchorPane>
                <children>
-                  <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <MenuBar style="-fx-background-color: #FF4500;">
+                        <MenuBar focusTraversable="false" style="-fx-background-color: #FF4500;">
                           <menus>
                             <Menu mnemonicParsing="false" text="Inicio" />
                               <Menu mnemonicParsing="false" text="Em Alta" />
@@ -54,7 +54,7 @@
                                  </items></Menu>
                           </menus>
                         </MenuBar>
-                        <TilePane hgap="150.0" prefHeight="542.0" prefWidth="893.0" vgap="50.0">
+                        <TilePane hgap="150.0" orientation="VERTICAL" tileAlignment="TOP_LEFT" vgap="50.0">
                            <children>
                               <HBox fx:id="v1" onMouseClicked="#player" prefHeight="100.0" prefWidth="300.0">
                                  <children>

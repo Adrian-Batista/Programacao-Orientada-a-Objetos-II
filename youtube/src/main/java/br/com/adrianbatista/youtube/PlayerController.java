@@ -19,6 +19,7 @@ public class PlayerController {
 	private void retornar() {
 		App.setRoot("main");
 		App.changeResizable();
+		App.centralizar();
 	}
 
 }

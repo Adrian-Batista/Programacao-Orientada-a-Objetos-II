@@ -9,12 +9,14 @@ public class MainController {
 	private void logout() {
 		App.setRoot("login");
 		App.changeResizable();
+		App.centralizar();
 	}
 	
 	@FXML
 	private void player() {
 		App.setRoot("play");
 		App.changeResizable();
+		App.centralizar();
 	}
 
    }
