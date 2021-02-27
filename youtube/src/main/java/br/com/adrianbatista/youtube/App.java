@@ -35,9 +35,9 @@ public class App extends Application {
     
     public static void changeResizable() {
     	if(stage.isResizable()) {
-    		stage.setResizable(false);
-    	}else {
     		stage.setResizable(true);
+    	}else {
+    		stage.setResizable(false);
     	}
     		
     }

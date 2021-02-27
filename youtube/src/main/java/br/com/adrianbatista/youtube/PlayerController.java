@@ -18,7 +18,6 @@ public class PlayerController {
 	@FXML
 	private void retornar() {
 		App.setRoot("main");
-		App.changeResizable();
 		App.centralizar();
 	}
 
