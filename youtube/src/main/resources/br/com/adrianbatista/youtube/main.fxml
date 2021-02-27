@@ -6,185 +6,190 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.TilePane?>
-<?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="400.0" style="-fx-background-color: #828282; -fx-border-color: #FF4500;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.adrianbatista.youtube.MainController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #828282; -fx-border-color: #FF4500;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.adrianbatista.youtube.MainController">
    <children>
-      <ScrollPane hbarPolicy="NEVER" style="-fx-background-color: #828282;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <content>
-          <AnchorPane>
-               <children>
-                  <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <MenuBar focusTraversable="false" style="-fx-background-color: #FF4500;">
-                          <menus>
-                            <Menu mnemonicParsing="false" text="Inicio" />
-                              <Menu mnemonicParsing="false" text="Em Alta" />
-                              <Menu mnemonicParsing="false" text="Músicas">
-                                <items>
-                                  <MenuItem mnemonicParsing="false" text="Sertanejo" />
-                                    <MenuItem mnemonicParsing="false" text="Forró" />
-                                    <MenuItem mnemonicParsing="false" text="Funk" />
-                                    <MenuItem mnemonicParsing="false" text="MPB" />
-                                    <MenuItem mnemonicParsing="false" text="Eletronica" />
-                                </items>
-                              </Menu>
-                              <Menu mnemonicParsing="false" text="Jogos">
-                                <items>
-                                  <MenuItem mnemonicParsing="false" text="RPG" />
-                                    <MenuItem mnemonicParsing="false" text="Mundo Aberto" />
-                                    <MenuItem mnemonicParsing="false" text="Guerra" />
-                                    <MenuItem mnemonicParsing="false" text="Corrida" />
-                                    <MenuItem mnemonicParsing="false" text="Ação e Aventura" />
-                                </items>
-                              </Menu>
-                            <Menu mnemonicParsing="false" text="Ajuda">
-                              <items>
-                                <MenuItem mnemonicParsing="false" text="Sobre" />
-                              </items>
-                            </Menu>
-                              <Menu fx:id="idSair" mnemonicParsing="false" text="Sair">
-                                 <items>
-                                    <MenuItem fx:id="idSair" mnemonicParsing="false" onAction="#logout" text="Sair" />
-                                 </items></Menu>
-                          </menus>
-                        </MenuBar>
-                        <TilePane hgap="150.0" orientation="VERTICAL" tileAlignment="TOP_LEFT" vgap="50.0">
-                           <children>
-                              <HBox fx:id="v1" onMouseClicked="#player" prefHeight="100.0" prefWidth="300.0">
-                                 <children>
-                                    <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../../../fotos/youtube.png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets left="25.0" right="25.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <Label prefHeight="80.0" prefWidth="170.0" text="Primeiro Vídeo">
-                                       <HBox.margin>
-                                          <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox fx:id="v2" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="300.0">
-                                 <children>
-                                    <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../../../fotos/youtube.png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets left="25.0" right="25.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <Label prefHeight="80.0" prefWidth="170.0" text="Segundo Vídeo">
-                                       <HBox.margin>
-                                          <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox fx:id="v3" layoutX="460.0" layoutY="10.0" prefHeight="100.0" prefWidth="300.0">
-                                 <children>
-                                    <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../../../fotos/youtube.png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets left="25.0" right="25.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <Label prefHeight="80.0" prefWidth="170.0" text="Terceiro Vídeo">
-                                       <HBox.margin>
-                                          <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox fx:id="v4" layoutX="10.0" layoutY="160.0" prefHeight="100.0" prefWidth="300.0">
-                                 <children>
-                                    <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../../../fotos/youtube.png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets left="25.0" right="25.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <Label prefHeight="80.0" prefWidth="170.0" text="Quarto Vídeo">
-                                       <HBox.margin>
-                                          <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox fx:id="v5" layoutX="460.0" layoutY="160.0" prefHeight="100.0" prefWidth="300.0">
-                                 <children>
-                                    <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../../../fotos/youtube.png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets left="25.0" right="25.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <Label prefHeight="80.0" prefWidth="170.0" text="Quinto Vídeo">
-                                       <HBox.margin>
-                                          <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox fx:id="v6" layoutX="10.0" layoutY="310.0" prefHeight="100.0" prefWidth="300.0">
-                                 <children>
-                                    <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../../../fotos/youtube.png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets left="25.0" right="25.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <Label prefHeight="80.0" prefWidth="170.0" text="Sexto Vídeo">
-                                       <HBox.margin>
-                                          <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox fx:id="v7" layoutX="460.0" layoutY="310.0" prefHeight="100.0" prefWidth="300.0">
-                                 <children>
-                                    <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../../../fotos/youtube.png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets left="25.0" right="25.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <Label prefHeight="80.0" prefWidth="170.0" text="Setimo Vídeo">
-                                       <HBox.margin>
-                                          <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                           </children>
-                        </TilePane>
-                     </children>
-                  </VBox>
-               </children>
-            </AnchorPane>
-        </content>
+      <MenuBar AnchorPane.bottomAnchor="567.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Meu Perfil">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Dados da Conta" />
+                  <MenuItem mnemonicParsing="false" text="Favoritos" />
+                  <MenuItem mnemonicParsing="false" text="Meus Vídeos" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Configurações">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Modo Escuro" />
+                  <MenuItem mnemonicParsing="false" text="Modo Claro" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Sair">
+            <items>
+              <MenuItem fx:id="idSair" mnemonicParsing="false" onAction="#logout" text="Sair" />
+            </items>
+          </Menu>
+        </menus>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
-      </ScrollPane>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </MenuBar>
+      <TabPane side="LEFT" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+        <tabs>
+          <Tab text="Início">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ScrollPane style="-fx-background-color: #828282;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <content>
+                              <TilePane hgap="150.0" orientation="VERTICAL" tileAlignment="TOP_LEFT" vgap="50.0">
+                                 <children>
+                                    <HBox fx:id="v1" onMouseClicked="#player">
+                                       <children>
+                                          <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../../fotos/youtube.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets left="25.0" right="25.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <Label prefHeight="80.0" prefWidth="170.0" text="Primeiro Vídeo">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="v2" layoutX="10.0" layoutY="10.0">
+                                       <children>
+                                          <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../../fotos/youtube.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets left="25.0" right="25.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <Label prefHeight="80.0" prefWidth="170.0" text="Segundo Vídeo">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="v3" layoutX="460.0" layoutY="10.0">
+                                       <children>
+                                          <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../../fotos/youtube.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets left="25.0" right="25.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <Label prefHeight="80.0" prefWidth="170.0" text="Terceiro Vídeo">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="v4" layoutX="10.0" layoutY="160.0">
+                                       <children>
+                                          <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../../fotos/youtube.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets left="25.0" right="25.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <Label prefHeight="80.0" prefWidth="170.0" text="Quarto Vídeo">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="v5" layoutX="460.0" layoutY="160.0">
+                                       <children>
+                                          <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../../fotos/youtube.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets left="25.0" right="25.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <Label prefHeight="80.0" prefWidth="170.0" text="Quinto Vídeo">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="v6" layoutX="10.0" layoutY="310.0">
+                                       <children>
+                                          <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../../fotos/youtube.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets left="25.0" right="25.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <Label prefHeight="80.0" prefWidth="170.0" text="Sexto Vídeo">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="v7" layoutX="460.0" layoutY="310.0">
+                                       <children>
+                                          <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../../fotos/youtube.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets left="25.0" right="25.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <Label prefHeight="80.0" prefWidth="170.0" text="Setimo Vídeo">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </TilePane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Busca Avançada">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
    </children>
 </AnchorPane>
