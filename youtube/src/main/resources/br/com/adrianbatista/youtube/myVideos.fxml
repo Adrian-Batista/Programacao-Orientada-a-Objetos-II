@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.adrianbatista.youtube.MyVideosController">
    <children>
       <SplitPane dividerPositions="0.298" layoutX="74.0" layoutY="149.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -22,7 +22,7 @@
                      <children>
                         <ImageView fitHeight="150.0" fitWidth="150.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../perfil.jpg" />
+                              <Image url="@../../../../../../perfil.jpg" />
                            </image>
                         </ImageView>
                         <Label text="Josevaldo Lisboa">
@@ -38,7 +38,7 @@
                   </VBox>
                   <HBox alignment="CENTER_LEFT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="350.0">
                      <children>
-                        <Button mnemonicParsing="false" text="Voltar" />
+                        <Button fx:id="idVoltar" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
                      </children>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -55,13 +55,13 @@
                               <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                            </VBox.margin>
                            <children>
-                              <Button mnemonicParsing="false" text="Vídeo 1" />
-                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Vídeo 2" />
-                              <Button layoutX="117.0" layoutY="10.0" mnemonicParsing="false" text="Vídeo 3" />
-                              <Button layoutX="224.0" layoutY="10.0" mnemonicParsing="false" text="Vídeo 4" />
-                              <Button layoutX="331.0" layoutY="10.0" mnemonicParsing="false" text="Vídeo 5" />
-                              <Button layoutX="10.0" layoutY="85.0" mnemonicParsing="false" text="Vídeo 6" />
-                              <Button layoutX="117.0" layoutY="85.0" mnemonicParsing="false" text="Vídeo 7" />
+                              <Button fx:id="v1" mnemonicParsing="false" onAction="#player" text="Vídeo 1" />
+                              <Button fx:id="v2" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#player" text="Vídeo 2" />
+                              <Button fx:id="v3" layoutX="117.0" layoutY="10.0" mnemonicParsing="false" onAction="#player" text="Vídeo 3" />
+                              <Button fx:id="v4" layoutX="224.0" layoutY="10.0" mnemonicParsing="false" onAction="#player" text="Vídeo 4" />
+                              <Button fx:id="v5" layoutX="331.0" layoutY="10.0" mnemonicParsing="false" onAction="#player" text="Vídeo 5" />
+                              <Button fx:id="v6" layoutX="10.0" layoutY="85.0" mnemonicParsing="false" onAction="#player" text="Vídeo 6" />
+                              <Button fx:id="v7" layoutX="117.0" layoutY="85.0" mnemonicParsing="false" onAction="#player" text="Vídeo 7" />
                            </children>
                         </TilePane>
                      </children></VBox>
