@@ -2,12 +2,11 @@ package br.com.adrianbatista.youtube;
 
 import javafx.fxml.FXML;
 
-public class MainController {	
-	
+public class MyVideosController {
 	
 	@FXML
-	private void logout() {
-		App.setRoot("login");
+	private void voltar() {
+		App.setRoot("main");
 		App.changeResizable();
 		App.centralizar();
 	}
@@ -18,13 +17,5 @@ public class MainController {
 		App.changeResizable();
 		App.centralizar();
 	}
-	
-	@FXML
-	private void myVideos() {
-		App.setRoot("myVideos");
-		App.changeResizable();
-		App.centralizar();
-	}
 
-   }
-
+}
