@@ -16,7 +16,7 @@
         <menus>
           <Menu mnemonicParsing="false" text="Meu Perfil">
             <items>
-              <MenuItem mnemonicParsing="false" text="Dados da Conta" />
+              <MenuItem fx:id="idPerfil" mnemonicParsing="false" onAction="#perfil" text="Dados da Conta" />
                   <MenuItem mnemonicParsing="false" text="Favoritos" />
                   <MenuItem fx:id="idMeusVideos" mnemonicParsing="false" onAction="#myVideos" text="Meus Vídeos" />
             </items>

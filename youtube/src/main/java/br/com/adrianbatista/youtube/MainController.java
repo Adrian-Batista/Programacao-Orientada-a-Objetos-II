@@ -25,6 +25,13 @@ public class MainController {
 		App.changeResizable();
 		App.centralizar();
 	}
+	
+	@FXML
+	private void perfil() {
+		App.setRoot("perfil");
+		App.changeResizable();
+		App.centralizar();
+	}
 
    }
 
