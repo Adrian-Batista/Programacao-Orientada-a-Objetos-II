@@ -15,6 +15,8 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+
 /**
  * JavaFX App
  */
@@ -56,11 +58,12 @@ public class App extends Application {
     			
     			User user = new User(username, password);
     			
-    			EntityManager em = Conn.getEntityManager();
-    			em.getTrasaction().begin();
+    			EntityManager em = ConnDB.getEntityManager();
+    			em.getTransaction().begin();
     			em.persist(user);
     			em.getTransaction().commit();
     			em.close();
+    			ConnDB.closeConn();
     		}
     	}
     }
