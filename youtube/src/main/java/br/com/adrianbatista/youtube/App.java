@@ -4,9 +4,16 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * JavaFX App
@@ -17,12 +24,45 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage){
+    	
+    	List<String> users = consultAPI();
+    	consumeAPI(users);
+    	
     	this.stage = stage;
         stage.setScene(FXMLUtil.loadScene("login"));
         this.centralizar();
         this.changeResizable();
         
         stage.show();
+    }
+    
+    //-------------------------------------------------------
+    
+    
+    private void consumeAPI(List<String>users) {
+    	for(String user : users)
+    		System.out.println(user);
+    }
+    
+    private List<String> consultAPI(){
+    	List<String> result = new ArrayList<>();
+    	try {
+    		URL url = new URL("https://lucasbueno.com.br/steam.json");
+    		URLConnection uc = url.openConnection();
+    		InputStreamReader input = new InputStreamReader(uc.getInputStream());
+    		BufferedReader in = new BufferedReader(input);
+    		String inputLine;
+    		
+    		while((inputLine = in.readLine()) != null)
+    			result.add(inputLine);
+    		
+    		in.close();
+    	}catch(Exception e) {
+    		Alert alert = ExceptionUtil.error("Erro", "Erro ao consumir a API!", "Erro ao consumir a API!", e);
+    		alert.showAndWait();
+    		
+    	}
+    	return result;
     }
 
     public static void setRoot(String fxml) {
