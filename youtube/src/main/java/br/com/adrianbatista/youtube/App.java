@@ -55,6 +55,12 @@ public class App extends Application {
     			System.out.println(password);
     			
     			User user = new User(username, password);
+    			
+    			EntityManager em = Conn.getEntityManager();
+    			em.getTrasaction().begin();
+    			em.persist(user);
+    			em.getTransaction().commit();
+    			em.close();
     		}
     	}
     }
@@ -91,10 +97,6 @@ public class App extends Application {
 
     public static void setRoot(String fxml) {
         stage.setScene(FXMLUtil.loadScene(fxml));
-    }
-
-    public static void main(String[] args) {
-        launch();
     }
     
     public static void changeResizable() {
