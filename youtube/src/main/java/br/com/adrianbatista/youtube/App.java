@@ -38,10 +38,18 @@ public class App extends Application {
     
     //-------------------------------------------------------
     
-    
     private void consumeAPI(List<String>users) {
-    	for(String user : users)
-    		System.out.println(user);
+    	for(int lineIndex = 0; lineIndex < users.size(); lineIndex++ ) {
+    		String line = users.get(lineIndex);
+    		if(line.contains("username")) {
+    			String[] dividedLine = line.split(":");
+    			String username = dividedLine[1];
+    			username = username.replace(",", " ");
+    			username = username.replace("\"", " ");
+    			username = username.trim();
+    			System.out.println(username);
+    		}
+    	}
     }
     
     private List<String> consultAPI(){
