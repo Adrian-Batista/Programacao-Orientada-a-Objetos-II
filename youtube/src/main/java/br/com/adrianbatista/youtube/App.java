@@ -42,14 +42,19 @@ public class App extends Application {
     	for(int lineIndex = 0; lineIndex < users.size(); lineIndex++ ) {
     		String line = users.get(lineIndex);
     		if(line.contains("username")) {
+    			// processamos o nome de Usuario
     			String username = processJSONLine(line);
     			System.out.println(username);
     			
+    			// vamos para a proxima linha
     			lineIndex++;
     			line = users.get(lineIndex);
     			
+    			// processamos o password
     			String password = processJSONLine(line);
     			System.out.println(password);
+    			
+    			User user = new User(username, password);
     		}
     	}
     }
