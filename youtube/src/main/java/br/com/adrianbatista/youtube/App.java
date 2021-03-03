@@ -42,15 +42,26 @@ public class App extends Application {
     	for(int lineIndex = 0; lineIndex < users.size(); lineIndex++ ) {
     		String line = users.get(lineIndex);
     		if(line.contains("username")) {
-    			String[] dividedLine = line.split(":");
-    			String username = dividedLine[1];
-    			username = username.replace(",", " ");
-    			username = username.replace("\"", " ");
-    			username = username.trim();
+    			String username = processJSONLine(line);
     			System.out.println(username);
+    			
+    			lineIndex++;
+    			line = users.get(lineIndex);
+    			
+    			String password = processJSONLine(line);
+    			System.out.println(password);
     		}
     	}
     }
+
+	private String processJSONLine(String line) {
+		String[] dividedLine = line.split(":");
+		String username = dividedLine[1];
+		username = username.replace(",", " ");
+		username = username.replace("\"", " ");
+		username = username.trim();
+		return username;
+	}
     
     private List<String> consultAPI(){
     	List<String> result = new ArrayList<>();
