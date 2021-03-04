@@ -24,12 +24,12 @@ public class UserDAO implements InterfaceDAO<User>{
 		em.getTransaction().commit();
 	}
 	
-	public User get(String username) {
+	public User get(Object pk) {
 		EntityManager em = UtilDB.getEntityManager();
-		User t = em.find(User.class, username);
+		User t = em.find(User.class, pk);
 		return t;
 	}
-
+	
 	@Override
 	public List<User> getAll() {
 		EntityManager em = UtilDB.getEntityManager();
