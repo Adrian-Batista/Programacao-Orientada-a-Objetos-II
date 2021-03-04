@@ -10,12 +10,12 @@ import javax.persistence.Persistence;
 public class ConnDB {
 	
 	private static EntityManagerFactory entityManagerFactory;
-	private static List<EntityManager> entityManagers = new ArrayList<EntityManager>();
+	private static EntityManager entityManager;
 	
 	public static EntityManager getEntityManager() {
-		EntityManager em = getEntityManagerFactory().createEntityManager();
-		entityManagers.add(em);
-		return em;
+		if(entityManager == null)
+			entityManager = getEntityManagerFactory().createEntityManager();
+		return entityManager;
 	}
 	
 	private static EntityManagerFactory getEntityManagerFactory() {
@@ -25,11 +25,10 @@ public class ConnDB {
 	}
 	
 	public static void closeConn() {
+		if(entityManager != null)
+			entityManager.close();
 		if(entityManagerFactory != null)
 			entityManagerFactory.close();
-		for(EntityManager em : entityManagers)
-			if(em.isOpen())
-				em.close();
 	}
 
 }
