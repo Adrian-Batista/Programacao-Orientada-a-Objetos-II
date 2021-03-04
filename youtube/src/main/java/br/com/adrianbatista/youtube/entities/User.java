@@ -1,4 +1,4 @@
-package br.com.adrianbatista.youtube;
+package br.com.adrianbatista.youtube.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

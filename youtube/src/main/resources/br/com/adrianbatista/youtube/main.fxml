@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.TilePane?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #828282; -fx-border-color: #FF4500;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.adrianbatista.youtube.MainController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #828282; -fx-border-color: #FF4500;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.adrianbatista.youtube.controllers.MainController">
    <children>
       <MenuBar style="-fx-background-color: #EE0000;" AnchorPane.bottomAnchor="567.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>

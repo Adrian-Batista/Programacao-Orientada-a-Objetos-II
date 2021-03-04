@@ -17,6 +17,9 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import br.com.adrianbatista.youtube.db.UtilDB;
+import br.com.adrianbatista.youtube.entities.User;
+
 /**
  * JavaFX App
  */
@@ -58,12 +61,12 @@ public class App extends Application {
     			
     			User user = new User(username, password);
     			
-    			EntityManager em = ConnDB.getEntityManager();
+    			EntityManager em = UtilDB.getEntityManager();
     			em.getTransaction().begin();
     			em.persist(user);
     			em.getTransaction().commit();
     			em.close();
-    			ConnDB.closeConn();
+    			UtilDB.closeConn();
     		}
     	}
     }

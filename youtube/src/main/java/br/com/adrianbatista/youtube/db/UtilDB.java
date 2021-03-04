@@ -1,4 +1,4 @@
-package br.com.adrianbatista.youtube;
+package br.com.adrianbatista.youtube.db;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class ConnDB {
+public class UtilDB {
 	
 	private static EntityManagerFactory entityManagerFactory;
 	private static EntityManager entityManager;

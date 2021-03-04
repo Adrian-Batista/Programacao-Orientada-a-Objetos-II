@@ -1,5 +1,6 @@
-package br.com.adrianbatista.youtube;
+package br.com.adrianbatista.youtube.controllers;
 
+import br.com.adrianbatista.youtube.App;
 import javafx.fxml.FXML;
 
 public class MyVideosController {

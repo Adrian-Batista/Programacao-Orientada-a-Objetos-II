@@ -1,5 +1,7 @@
-package br.com.adrianbatista.youtube;
+package br.com.adrianbatista.youtube.controllers;
 
+import br.com.adrianbatista.youtube.App;
+import br.com.adrianbatista.youtube.FXMLUtil;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;

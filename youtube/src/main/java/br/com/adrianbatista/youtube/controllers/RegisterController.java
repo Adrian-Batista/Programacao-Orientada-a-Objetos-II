@@ -1,4 +1,4 @@
-package br.com.adrianbatista.youtube;
+package br.com.adrianbatista.youtube.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
