@@ -43,9 +43,7 @@ public class UserDAO implements InterfaceDAO<User>{
 	
 	@Override
 	public List<User> getAll() {
-		EntityManager em = UtilDB.getEntityManager();
-		List<User> users = em.createQuery("SELECT + u FROM User u", User.class).getResultList();
-		return users;
+		return UtilDB.getEntityManager().createQuery("SELECT + u FROM User u", User.class).getResultList();
 	}
 
 }
