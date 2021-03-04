@@ -36,9 +36,7 @@ public class UserDAO implements InterfaceDAO<User>{
 	}
 	
 	public User get(Object pk) {
-		EntityManager em = UtilDB.getEntityManager();
-		User t = em.find(User.class, pk);
-		return t;
+		return UtilDB.getEntityManager().find(User.class, pk);
 	}
 	
 	@Override
