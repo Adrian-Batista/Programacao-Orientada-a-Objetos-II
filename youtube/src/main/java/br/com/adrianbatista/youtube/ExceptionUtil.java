@@ -22,8 +22,11 @@ public class ExceptionUtil {
 		// Create expandable Exception.
 		StringWriter sw = new StringWriter();
 		PrintWriter pw = new PrintWriter(sw);
-		ex.printStackTrace(pw);
-		String exceptionText = sw.toString();
+		String exceptionText = "";
+		if(ex != null) {
+			ex.printStackTrace(pw);
+			exceptionText = sw.toString();	
+		}
 
 		Label label = new Label("A pilha de execução da excessão é: ");
 

@@ -18,7 +18,7 @@
                      <HBox.margin>
                         <Insets left="5.0" right="5.0" />
                      </HBox.margin></Label>
-                  <TextField fx:id="idEmail">
+                  <TextField fx:id="txtEmail">
                      <HBox.margin>
                         <Insets left="5.0" right="5.0" />
                      </HBox.margin></TextField>
@@ -33,7 +33,7 @@
                      <HBox.margin>
                         <Insets left="5.0" right="5.0" />
                      </HBox.margin></Label>
-                  <PasswordField fx:id="idPassword">
+                  <PasswordField fx:id="txtPassword">
                      <HBox.margin>
                         <Insets left="5.0" right="5.0" />
                      </HBox.margin></PasswordField>
