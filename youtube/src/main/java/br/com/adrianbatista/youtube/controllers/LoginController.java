@@ -1,7 +1,7 @@
 package br.com.adrianbatista.youtube.controllers;
 
 import br.com.adrianbatista.youtube.App;
-import br.com.adrianbatista.youtube.ExceptionUtil;
+import br.com.adrianbatista.youtube.AlertnUtil;
 import br.com.adrianbatista.youtube.FXMLUtil;
 import br.com.adrianbatista.youtube.db.UserDAO;
 import br.com.adrianbatista.youtube.entities.User;
@@ -30,26 +30,26 @@ public class LoginController {
 		String password = txtPassword.getText();
 		
 		if(email.isBlank()) {
-			Alert alert = ExceptionUtil.error("Erro!", "ERRO Digite o e-mail!", "", null);	
+			Alert alert = AlertnUtil.error("Erro!", "ERRO Digite o e-mail!", "", null);	
 			alert.showAndWait();
 			return;
 		}
 		
 		if(password.isBlank()) {
-			Alert alert = ExceptionUtil.error("Erro!", "ERRO Digite a senha!", "", null);	
+			Alert alert = AlertnUtil.error("Erro!", "ERRO Digite a senha!", "", null);	
 			alert.showAndWait();
 			return;
 		}
 		
 		User u = new UserDAO().get(email);
 		if(u == null) {
-			Alert alert = ExceptionUtil.error("Erro!", "ERRO Usuário ou senha invalido(s)!", "", null);	
+			Alert alert = AlertnUtil.error("Erro!", "ERRO Usuário ou senha invalido(s)!", "", null);	
 			alert.showAndWait();
 			return;
 		}
 		
 		if(!u.getPassword().contentEquals(password)) {
-			Alert alert = ExceptionUtil.error("Erro!", "ERRO Usuário ou senha invalido(s)!", "", null);	
+			Alert alert = AlertnUtil.error("Erro!", "ERRO Usuário ou senha invalido(s)!", "", null);	
 			alert.showAndWait();
 			return;
 		}

@@ -11,7 +11,15 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 
-public class ExceptionUtil {
+public class AlertnUtil {
+	
+	public static Alert info(String title, String header, String content) {
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle(title);
+		alert.setHeaderText(header);
+		alert.setContentText(content);
+		return alert;
+	}
 	
 	public static Alert error(String title, String header, String content, Exception ex) {
 		Alert alert = new Alert(AlertType.ERROR);
