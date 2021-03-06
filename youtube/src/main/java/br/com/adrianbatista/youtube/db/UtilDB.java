@@ -12,6 +12,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import br.com.adrianbatista.youtube.entities.User;
+import br.com.adrianbatista.youtube.entities.Video;
 import javafx.scene.control.Alert;
 
 public class UtilDB {
@@ -45,6 +46,10 @@ public class UtilDB {
 
 		User u = new User("admin", "teste");
 		new UserDAO().persist(u);
+		
+		new VideoDAO().persist(new Video("Primeiro Video", "Este é o primeiro video", 10));
+		new VideoDAO().persist(new Video("Segundo Video", "Este é o segundo video", 15));
+		
 	}
 
 	public static List<User> consumeAPI(List<String> users) {

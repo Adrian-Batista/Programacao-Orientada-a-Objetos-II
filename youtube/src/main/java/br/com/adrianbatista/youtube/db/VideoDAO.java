@@ -8,10 +8,10 @@ import javax.persistence.EntityManager;
 import br.com.adrianbatista.youtube.entities.User;
 import br.com.adrianbatista.youtube.entities.Video;
 
-public class UserDAO implements InterfaceDAO<User>{
+public class VideoDAO implements InterfaceDAO<Video>{
 
 	@Override
-	public void persist(User t) {
+	public void persist(Video t) {
 		EntityManager em = UtilDB.getEntityManager();
 		try {
 			em.getTransaction().begin();
@@ -19,12 +19,10 @@ public class UserDAO implements InterfaceDAO<User>{
 			em.getTransaction().commit();
 		}catch(EntityExistsException e){
 			em.getTransaction().rollback();
-			User original = get(t.getUsername());
+			Video original = get(t.getName());
 			em.getTransaction().begin();
-			original.setPassword(t.getPassword());
-			original.getVideos().clear();
-			for(Video v : t.getVideos())
-				original.getVideos().add(v);
+			original.setDescription(t.getDescription());
+			original.setLike(t.getLike());
 			em.getTransaction().commit();
 			
 		}
@@ -32,20 +30,20 @@ public class UserDAO implements InterfaceDAO<User>{
 	}
 
 	@Override
-	public void remove(User t) {
+	public void remove(Video t) {
 		EntityManager em = UtilDB.getEntityManager();
 		em.getTransaction().begin();
 		em.remove(t);
 		em.getTransaction().commit();
 	}
 	
-	public User get(Object pk) {
-		return UtilDB.getEntityManager().find(User.class, pk);
+	public Video get(Object pk) {
+		return UtilDB.getEntityManager().find(Video.class, pk);
 	}
 	
 	@Override
-	public List<User> getAll() {
-		return UtilDB.getEntityManager().createQuery("SELECT + u FROM User u", User.class).getResultList();
+	public List<Video> getAll() {
+		return UtilDB.getEntityManager().createQuery("SELECT + u FROM User u", Video.class).getResultList();
 	}
 
 }

@@ -11,7 +11,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 
-public class AlertnUtil {
+public class AlertUtil {
 	
 	public static Alert info(String title, String header, String content) {
 		Alert alert = new Alert(AlertType.INFORMATION);

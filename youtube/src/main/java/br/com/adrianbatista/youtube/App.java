@@ -33,6 +33,7 @@ public class App extends Application {
         stage.setScene(FXMLUtil.loadScene("login"));
         this.centralizar();
         this.changeResizable();
+        stage.setTitle("YouTube");
         stage.show();
     }
 

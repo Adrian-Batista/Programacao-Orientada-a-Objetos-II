@@ -1,10 +1,11 @@
 package br.com.adrianbatista.youtube.controllers;
 
 import br.com.adrianbatista.youtube.App;
-import br.com.adrianbatista.youtube.AlertnUtil;
+import br.com.adrianbatista.youtube.AlertUtil;
 import br.com.adrianbatista.youtube.FXMLUtil;
 import br.com.adrianbatista.youtube.db.UserDAO;
 import br.com.adrianbatista.youtube.entities.User;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -30,26 +31,26 @@ public class LoginController {
 		String password = txtPassword.getText();
 		
 		if(email.isBlank()) {
-			Alert alert = AlertnUtil.error("Erro!", "ERRO Digite o e-mail!", "", null);	
+			Alert alert = AlertUtil.error("Erro!", "ERRO Digite o e-mail!", "", null);	
 			alert.showAndWait();
 			return;
 		}
 		
 		if(password.isBlank()) {
-			Alert alert = AlertnUtil.error("Erro!", "ERRO Digite a senha!", "", null);	
+			Alert alert = AlertUtil.error("Erro!", "ERRO Digite a senha!", "", null);	
 			alert.showAndWait();
 			return;
 		}
 		
 		User u = new UserDAO().get(email);
 		if(u == null) {
-			Alert alert = AlertnUtil.error("Erro!", "ERRO Usuário ou senha invalido(s)!", "", null);	
+			Alert alert = AlertUtil.error("Erro!", "ERRO Usuário ou senha invalido(s)!", "", null);	
 			alert.showAndWait();
 			return;
 		}
 		
 		if(!u.getPassword().contentEquals(password)) {
-			Alert alert = AlertnUtil.error("Erro!", "ERRO Usuário ou senha invalido(s)!", "", null);	
+			Alert alert = AlertUtil.error("Erro!", "ERRO Usuário ou senha invalido(s)!", "", null);	
 			alert.showAndWait();
 			return;
 		}
@@ -69,8 +70,7 @@ public class LoginController {
 	
 	@FXML
 	public void fechar(){
-	    Stage stage = (Stage) idExit.getScene().getWindow();
-	    stage.close();
+	    Platform.exit();
 	}
 	
 	

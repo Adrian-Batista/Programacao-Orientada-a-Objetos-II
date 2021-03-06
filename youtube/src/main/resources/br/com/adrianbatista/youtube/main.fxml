@@ -42,7 +42,7 @@
       </MenuBar>
       <TabPane side="LEFT" style="-fx-background-color: #CDC9A5;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
         <tabs>
-          <Tab text="Início">
+          <Tab onSelectionChanged="#UpdateLibrary" text="Início">
             <content>
               <AnchorPane style="-fx-background-color: #CDC9A5;">
                      <children>
@@ -71,7 +71,7 @@
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Busca Avançada">
+          <Tab onSelectionChanged="#UpdateSearch" text="Busca Avançada">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #828282;" />
             </content>
