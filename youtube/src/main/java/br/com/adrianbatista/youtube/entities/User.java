@@ -12,6 +12,8 @@ public class User {
 	@Id
 	private String username;
 	private String password;
+	private String userImage;
+	private boolean saveLogin;
 	
 	@ManyToMany
 	private List<Video> videos;
@@ -19,11 +21,31 @@ public class User {
 	public User() {
 	}
 	
-	public User(String username, String password) {
+	public User(String username, String password, String userImage) {
 		super();
 		this.username = username;
 		this.password = password;
+		this.userImage = userImage;
+		this.saveLogin = true;
 		this.videos = new ArrayList<>();
+	}
+	
+	
+
+	public String getUserImage() {
+		return userImage;
+	}
+
+	public void setUserImage(String userImage) {
+		this.userImage = userImage;
+	}
+
+	public boolean isSaveLogin() {
+		return saveLogin;
+	}
+
+	public void setSaveLogin(boolean saveLogin) {
+		this.saveLogin = saveLogin;
 	}
 
 	public String getUsername() {
