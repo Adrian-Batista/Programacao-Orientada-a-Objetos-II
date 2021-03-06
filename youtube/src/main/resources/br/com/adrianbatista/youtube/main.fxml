@@ -2,13 +2,16 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.HBox?>
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #828282; -fx-border-color: #FF4500;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.adrianbatista.youtube.controllers.MainController">
    <children>
@@ -46,24 +49,26 @@
             <content>
               <AnchorPane style="-fx-background-color: #CDC9A5;">
                      <children>
-                        <TilePane hgap="100.0" style="-fx-background-color: #BEBEBE;" tileAlignment="TOP_LEFT" vgap="50.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <children>
-                              <Button fx:id="v1" alignment="CENTER" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #828282;" text="Vídeo 1" />
-                              <Button fx:id="v2" alignment="CENTER" layoutX="25.0" layoutY="25.0" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #828282;" text="Vídeo 2" />
-                              <Button fx:id="v3" alignment="CENTER" layoutX="10.0" layoutY="72.0" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #828282;" text="Vídeo 3" />
-                              <Button fx:id="v4" alignment="CENTER" layoutX="10.0" layoutY="134.0" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #828282;" text="Vídeo 4" />
-                              <Button fx:id="v5" alignment="CENTER" layoutX="10.0" layoutY="196.0" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #828282;" text="Vídeo 5" />
-                              <Button fx:id="v6" alignment="CENTER" layoutX="10.0" layoutY="258.0" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #828282;" text="Vídeo 6" />
-                              <Button fx:id="v7" alignment="CENTER" layoutX="225.0" layoutY="125.0" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #828282;" text="Vídeo 7" />
-                              <Button fx:id="v8" alignment="CENTER" layoutX="425.0" layoutY="125.0" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #828282;" text="Vídeo 8" />
-                              <Button fx:id="v9" alignment="CENTER" layoutX="625.0" layoutY="125.0" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #828282;" text="Vídeo 9" />
-                              <Button fx:id="v10" alignment="CENTER" layoutX="25.0" layoutY="225.0" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #828282;" text="Vídeo 10" />
-                              <Button fx:id="v11" alignment="CENTER" layoutX="225.0" layoutY="225.0" mnemonicParsing="false" onAction="#player" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #828282;" text="Vídeo 11" />
-                           </children>
-                           <padding>
-                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-                           </padding>
-                        </TilePane>
+                        <SplitPane dividerPositions="0.29797979797979796" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0">
+                                 <children>
+                                    <ListView AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane>
+                                 <children>
+                                    <Separator AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                    <HBox alignment="CENTER" prefHeight="40.0" spacing="35.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                       <children>
+                                          <Button fx:id="btnView" mnemonicParsing="false" text="Visualizar" />
+                                          <Button fx:id="btnRemove" mnemonicParsing="false" text="Remover" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
                      </children>
                      <opaqueInsets>
                         <Insets />
