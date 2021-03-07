@@ -26,6 +26,7 @@ import br.com.adrianbatista.youtube.entities.User;
 public class App extends Application {
 
     private static Stage stage;
+	private static Thread connection;
 
     @Override
     public void start(Stage stage){
@@ -36,6 +37,10 @@ public class App extends Application {
         stage.setTitle("YouTube");
         stage.show();
     }
+    
+    public static void setConnection(Thread connection) {
+		App.connection = connection;
+	}
 
     public static void setRoot(String fxml) {
         stage.setScene(FXMLUtil.loadScene(fxml));
