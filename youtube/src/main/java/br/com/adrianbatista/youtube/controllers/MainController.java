@@ -64,6 +64,20 @@ public class MainController {
 	}
 
 	@FXML
+	private void perfil() {
+		App.setRoot("perfil");
+		App.changeResizable();
+		App.centralizar();
+	}
+	
+	@FXML
+	private void myVideos() {
+		App.setRoot("myVideos");
+		App.changeResizable();
+		App.centralizar();
+	}
+	
+	@FXML
 	private void logout() {
 		user = null;
 		FXMLUtil.changeFlatbee(false);

@@ -44,11 +44,13 @@ public class UtilDB {
 		for (User u : consumeAPI(consultAPI()))
 			new UserDAO().persist(u);
 
-		User u = new User("admin", "teste");
+		User u = new User("admin", "teste", "");
 		new UserDAO().persist(u);
 		
-		new VideoDAO().persist(new Video("Primeiro Video", "Este é o primeiro video", 10));
-		new VideoDAO().persist(new Video("Segundo Video", "Este é o segundo video", 15));
+		Video p1 = new Video("Primeiro Video", "Este é o primeiro video", 10);
+		Video p2 = new Video("Segundo Video", "Este é o segundo video", 15);
+		new VideoDAO().persist(p1);
+		new VideoDAO().persist(p2);
 		
 	}
 
@@ -61,7 +63,7 @@ public class UtilDB {
 				lineIndex++;
 				line = users.get(lineIndex);
 				String password = processJSONLine(line);
-				User user = new User(username, password);
+				User user = new User(username, password, "");
 				result.add(user);
 			}
 		}
