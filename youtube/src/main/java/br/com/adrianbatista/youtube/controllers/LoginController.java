@@ -1,7 +1,9 @@
 package br.com.adrianbatista.youtube.controllers;
 
-import br.com.adrianbatista.youtube.App;
+import org.controlsfx.control.ToggleSwitch;
+
 import br.com.adrianbatista.youtube.AlertUtil;
+import br.com.adrianbatista.youtube.App;
 import br.com.adrianbatista.youtube.FXMLUtil;
 import br.com.adrianbatista.youtube.db.UserDAO;
 import br.com.adrianbatista.youtube.entities.User;
@@ -9,70 +11,79 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class LoginController {
 	@FXML
 	private Button btnLogin;
-	
-	@FXML
-	private Button idExit;
-	
+
 	@FXML
 	private TextField txtEmail;
+
+	@FXML
+	private PasswordField txtPassword;
+
+	@FXML
+	private ToggleSwitch togglSaveLogin;
 	
 	@FXML
-	private TextField txtPassword;
+	private ToggleSwitch togglFlatbee;
 	
 	@FXML
 	private void login() {
 		String email = txtEmail.getText();
 		String password = txtPassword.getText();
-		
-		if(email.isBlank()) {
-			Alert alert = AlertUtil.error("Erro!", "ERRO Digite o e-mail!", "", null);	
+
+		if (email.isBlank()) {
+			Alert alert = AlertUtil.error("Erro!", "Erro!", "Digite o e-mail!", null);
 			alert.showAndWait();
 			return;
 		}
-		
-		if(password.isBlank()) {
-			Alert alert = AlertUtil.error("Erro!", "ERRO Digite a senha!", "", null);	
+		if (password.isBlank()) {
+			Alert alert = AlertUtil.error("Erro!", "Erro!", "Digite a senha!", null);
 			alert.showAndWait();
 			return;
 		}
-		
-		User u = new UserDAO().get(email);
-		if(u == null) {
-			Alert alert = AlertUtil.error("Erro!", "ERRO Usuário ou senha invalido(s)!", "", null);	
+		User user = new UserDAO().get(email);
+		if (user == null) {
+			Alert alert = AlertUtil.error("Erro!", "Erro!", "E-mail ou senha inválido(s)!", null);
 			alert.showAndWait();
 			return;
 		}
-		
-		if(!u.getPassword().contentEquals(password)) {
-			Alert alert = AlertUtil.error("Erro!", "ERRO Usuário ou senha invalido(s)!", "", null);	
+		if (!user.getPassword().contentEquals(password)) {
+			Alert alert = AlertUtil.error("Erro!", "Erro!", "E-mail ou senha inválido(s)!", null);
 			alert.showAndWait();
 			return;
 		}
+		if (togglSaveLogin.isSelected())
+			user.setSaveLogin(true);
+		else
+			user.setSaveLogin(false);
 		
-		App.setRoot("main");
+		if(togglFlatbee.isSelected())
+			FXMLUtil.changeFlatbee(true);
+		else
+			FXMLUtil.changeFlatbee(false);
+		
+		new UserDAO().persist(user);
 		App.changeResizable();
-		App.centralizar();
+		App.setRoot("main");
+		MainController controller = FXMLUtil.getMainController();
+		controller.updateUserInfo(user);
 	}
-	
+
 	@FXML
 	private void register() {
 		Stage stage = new Stage();
-	    stage.setScene(FXMLUtil.loadScene("register"));
-	    stage.setResizable(true);
-	    stage.show();
+		stage.setScene(FXMLUtil.loadScene("register"));
+		stage.setResizable(false);
+		stage.show();
 	}
-	
-	@FXML
-	public void fechar(){
-	    Platform.exit();
-	}
-	
-	
 
+	@FXML
+	private void exit() {
+		Platform.exit();
+	}
 }

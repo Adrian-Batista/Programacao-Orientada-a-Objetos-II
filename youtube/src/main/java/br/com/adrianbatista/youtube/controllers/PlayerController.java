@@ -19,7 +19,6 @@ public class PlayerController {
 	@FXML
 	private void retornar() {
 		App.setRoot("main");
-		App.centralizar();
 	}
 
 }

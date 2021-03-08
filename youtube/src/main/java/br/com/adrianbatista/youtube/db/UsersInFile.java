@@ -9,6 +9,7 @@ import java.util.Scanner;
 import br.com.adrianbatista.youtube.entities.User;
 
 public class UsersInFile {
+
 	public void check() {
 		String fileLocation = "./local-users.json";
 		List<String> fileLines = new ArrayList<>();

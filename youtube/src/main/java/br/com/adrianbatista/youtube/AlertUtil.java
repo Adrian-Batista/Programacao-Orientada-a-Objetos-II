@@ -1,6 +1,5 @@
 package br.com.adrianbatista.youtube;
 
-import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 

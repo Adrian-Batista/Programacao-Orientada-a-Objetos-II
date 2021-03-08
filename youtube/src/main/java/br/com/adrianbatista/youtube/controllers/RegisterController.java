@@ -20,22 +20,18 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class RegisterController {
-	
-	@FXML 
-	private Button btnReturn;
-	
+
 	@FXML
 	private TextField txtEmail;
-	
+
 	@FXML
 	private PasswordField txtPassword;
-	
+
 	@FXML
 	private ImageView imgUser;
 
 	@FXML
 	private Button btnSelectImage;
-	
 	
 	@FXML
 	private void selectImage() throws IOException {
@@ -48,46 +44,38 @@ public class RegisterController {
 		Files.copy(selected.toPath(), path.toPath(), StandardCopyOption.REPLACE_EXISTING);		
 		imgUser.setImage(new Image(path.toURI().toString()));
 	}
-	
-	
-	public void register() {
+
+	@FXML
+	private void close() {
+		Stage stage = (Stage) txtEmail.getScene().getWindow();
+		stage.close();
+	}
+
+	@FXML
+	private void register() {
 		String email = txtEmail.getText();
 		String password = txtPassword.getText();
-		
-		if(email.isBlank()) {
-			Alert alert = AlertUtil.error("Erro!", "ERRO Digite o e-mail!", "", null);	
+
+		if (email.isBlank()) {
+			Alert alert = AlertUtil.error("Erro!", "Erro!", "Digite o e-mail!", null);
 			alert.showAndWait();
 			return;
 		}
-		
-		if(password.isBlank()) {
-			Alert alert = AlertUtil.error("Erro!", "ERRO Digite a senha!", "", null);	
+		if (password.isBlank()) {
+			Alert alert = AlertUtil.error("Erro!", "Erro!", "Digite a senha!", null);
 			alert.showAndWait();
 			return;
 		}
-		
 		User u = new UserDAO().get(email);
-		if(u != null) {
-			Alert alert = AlertUtil.error("Erro!", "ERRO Email já em uso!", "", null);	
+		if (u != null) {
+			Alert alert = AlertUtil.error("Erro!", "Erro!", "E-mail já em uso!", null);
 			alert.showAndWait();
 			return;
 		}
 		new UserDAO().persist(new User(email, password, imgUser.getImage().getUrl()));
-		
-		AlertUtil.info("Sucesso","Sucesso", "Cadastro Realizado com sucesso").show();
-		voltar();
-		
-	}
-	
-	@FXML
-	private void voltar(){
-	    Stage stage = (Stage) btnReturn.getScene().getWindow();
-	    stage.close();
-	}
 
-	@FXML
-	private void fechar(){
-	    Platform.exit();
+		AlertUtil.info("Sucesso", "Sucesso", "Cadastro realizado com sucesso").show();
+		close();
 	}
 
 }

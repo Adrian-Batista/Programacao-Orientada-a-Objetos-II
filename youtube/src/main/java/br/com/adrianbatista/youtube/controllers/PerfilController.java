@@ -9,7 +9,6 @@ public class PerfilController {
 	private void retornar() {
 		App.setRoot("main");
 		App.changeResizable();
-		App.centralizar();
 	}
 
 }

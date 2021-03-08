@@ -11,34 +11,35 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import br.com.adrianbatista.youtube.entities.User;
+import br.com.adrianbatista.youtube.AlertUtil;
 import br.com.adrianbatista.youtube.entities.Video;
+import br.com.adrianbatista.youtube.entities.User;
 import javafx.scene.control.Alert;
 
 public class UtilDB {
-	
+
 	private static EntityManagerFactory entityManagerFactory;
 	private static EntityManager entityManager;
-	
-	public static EntityManager getEntityManager() {
-		if(entityManager == null)
-			entityManager = getEntityManagerFactory().createEntityManager();
-		return entityManager;
-	}
-	
+
 	private static EntityManagerFactory getEntityManagerFactory() {
-		if(entityManagerFactory == null)
+		if (entityManagerFactory == null)
 			entityManagerFactory = Persistence.createEntityManagerFactory("teste");
 		return entityManagerFactory;
 	}
-	
+
+	public static EntityManager getEntityManager() {
+		if (entityManager == null)
+			entityManager = getEntityManagerFactory().createEntityManager();
+		return entityManager;
+	}
+
 	public static void closeConn() {
-		if(entityManager != null)
+		if (entityManager != null)
 			entityManager.close();
-		if(entityManagerFactory != null)
+		if (entityManagerFactory != null)
 			entityManagerFactory.close();
 	}
-	
+
 	public static void initDB() {
 
 		for (User u : consumeAPI(consultAPI()))
@@ -46,12 +47,14 @@ public class UtilDB {
 
 		User u = new User("admin", "teste", "");
 		new UserDAO().persist(u);
-		
-		Video p1 = new Video("Primeiro Video", "Este é o primeiro video", 10);
-		Video p2 = new Video("Segundo Video", "Este é o segundo video", 15);
-		new VideoDAO().persist(p1);
-		new VideoDAO().persist(p2);
-		
+
+		Video cs = new Video("Counter-strike", "Joguinho de tiro", 10.5);
+		Video nfs = new Video("Need for Speed", "Joguinho de corrida de carrinhos", 15.5);
+		new VideoDAO().persist(cs);
+		new VideoDAO().persist(nfs);
+
+		u.getVideos().add(cs);
+		new UserDAO().persist(u);
 	}
 
 	public static List<User> consumeAPI(List<String> users) {
@@ -93,10 +96,9 @@ public class UtilDB {
 
 			in.close();
 		} catch (Exception e) {
-			//Alert alert = AlertUtil.error("Erro", "Erro ao consumir a API!", "Erro ao consumir a API!", e);
-			//alert.showAndWait();
+			Alert alert = AlertUtil.error("Erro", "Erro ao consumir a API!", "Erro ao consumir a API!", e);
+			alert.showAndWait();
 		}
 		return result;
 	}
-
 }

@@ -10,17 +10,17 @@ public class Video {
 	
 	private String description;
 	
-	private int like;
-	
+	private double price;
+
 	public Video() {
-		
+
 	}
 
-	public Video(String name, String description, int like) {
+	public Video(String name, String description, double price) {
 		super();
 		this.name = name;
 		this.description = description;
-		this.like = like;
+		this.price = price;
 	}
 
 	public String getName() {
@@ -29,7 +29,7 @@ public class Video {
 
 	public void setName(String name) {
 		this.name = name;
-	}
+	}	
 
 	public String getDescription() {
 		return description;
@@ -39,13 +39,37 @@ public class Video {
 		this.description = description;
 	}
 
-	public int getLike() {
-		return like;
+	public double getPrice() {
+		return price;
 	}
 
-	public void setLike(int like) {
-		this.like = like;
+	public void setPrice(double price) {
+		this.price = price;
 	}
-	
-	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Video other = (Video) obj;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		return true;
+	}
+
 }
