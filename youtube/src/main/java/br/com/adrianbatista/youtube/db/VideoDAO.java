@@ -41,6 +41,6 @@ public class VideoDAO implements InterfaceDAO<Video> {
 
 	@Override
 	public List<Video> getAll() {
-		return UtilDB.getEntityManager().createQuery("SELECT g FROM Game g", Video.class).getResultList();
+		return UtilDB.getEntityManager().createQuery("SELECT g FROM Video g", Video.class).getResultList();
 	}
 }
