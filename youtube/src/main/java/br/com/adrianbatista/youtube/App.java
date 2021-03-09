@@ -16,7 +16,7 @@ public class App extends Application {
 		stage = stge;
 		stage.setScene(FXMLUtil.loadScene("login"));
 		changeResizable();
-		stage.setTitle("Steam");
+		stage.setTitle("YouTube");
 		stage.show();
 		connection.start();
 	}

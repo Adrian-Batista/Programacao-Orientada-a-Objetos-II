@@ -64,11 +64,11 @@
                           <items>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                  <children>
-                                    <ListView fx:id="userVideoList" onMouseClicked="#updateDescription" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <ListView fx:id="userGameList" onMouseClicked="#updateDescription" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                  </children></AnchorPane>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                  <children>
-                                    <Label fx:id="lblVideoDescription" alignment="TOP_LEFT" text="Game description" wrapText="true" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <Label fx:id="lblGameDescription" alignment="TOP_LEFT" text="Game description" wrapText="true" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <font>
                                           <Font name="Roboto" size="24.0" />
                                        </font>
@@ -132,11 +132,11 @@
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab onSelectionChanged="#updateVideosStore" text="Loja">
+            <Tab onSelectionChanged="#updateGamesStore" text="Loja">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TilePane fx:id="tileVideos" alignment="TOP_CENTER" hgap="100.0" vgap="100.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                        <TilePane fx:id="tileGames" alignment="TOP_CENTER" hgap="100.0" vgap="100.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
                      </children></AnchorPane>
                </content>
             </Tab>
