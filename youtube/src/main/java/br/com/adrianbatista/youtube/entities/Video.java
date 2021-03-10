@@ -10,17 +10,17 @@ public class Video {
 	
 	private String description;
 	
-	private double price;
+	private String category;
 
 	public Video() {
 
 	}
 
-	public Video(String name, String description, double price) {
+	public Video(String name, String category, String description) {
 		super();
 		this.name = name;
+		this.category = category;
 		this.description = description;
-		this.price = price;
 	}
 
 	public String getName() {
@@ -29,7 +29,15 @@ public class Video {
 
 	public void setName(String name) {
 		this.name = name;
-	}	
+	}
+	
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
 
 	public String getDescription() {
 		return description;
@@ -39,13 +47,7 @@ public class Video {
 		this.description = description;
 	}
 
-	public double getPrice() {
-		return price;
-	}
-
-	public void setPrice(double price) {
-		this.price = price;
-	}
+	
 
 	@Override
 	public int hashCode() {

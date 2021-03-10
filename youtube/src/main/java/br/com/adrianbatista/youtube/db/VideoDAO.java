@@ -21,7 +21,7 @@ public class VideoDAO implements InterfaceDAO<Video> {
 			Video original = get(t.getName());
 			em.getTransaction().begin();
 			original.setDescription(t.getDescription());
-			original.setPrice(t.getPrice());
+			original.setCategory(t.getCategory());
 			em.getTransaction().commit();
 		}
 	}

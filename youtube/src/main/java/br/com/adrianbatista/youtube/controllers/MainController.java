@@ -83,11 +83,7 @@ public class MainController {
 	
 	@FXML
 	private void play() throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("play.fxml"));
-		Stage stage = new Stage();
-		Scene scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
+		
 	}
 
 	@FXML
