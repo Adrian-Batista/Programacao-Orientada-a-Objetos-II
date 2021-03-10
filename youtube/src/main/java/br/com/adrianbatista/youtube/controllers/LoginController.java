@@ -32,7 +32,7 @@ public class LoginController {
 	private ToggleSwitch togglFlatbee;
 	
 	@FXML
-	private void login() {
+	public void login() {
 		String email = txtEmail.getText();
 		String password = txtPassword.getText();
 
