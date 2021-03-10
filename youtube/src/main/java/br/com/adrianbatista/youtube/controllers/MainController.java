@@ -26,7 +26,7 @@ public class MainController {
 	private User user;
 
 	@FXML
-	private TilePane tileGames;
+	private TilePane tileVideos;
 
 	@FXML
 	private ListView<String> userGameList;
@@ -60,7 +60,7 @@ public class MainController {
 	private void updateDescription() {
 		String videoName = userGameList.getSelectionModel().getSelectedItem();
 		Video video = new VideoDAO().get(videoName);
-		lblGameDescription.setText(video.getDescription());
+		lblGameDescription.setText("Categoria: " + video.getDescription());
 	}
 
 	@FXML
@@ -75,15 +75,21 @@ public class MainController {
 	private void exit() {
 		Platform.exit();
 	}
+	
+	@FXML
+	private void play() {
+		App.changeResizable();
+		App.setRoot("play");
+	}
 
 	@FXML
-	private void updateGamesStore() {
-		tileGames.getChildren().clear();
+	private void updateVideosStore() {
+		tileVideos.getChildren().clear();
 		for (Video g : new VideoDAO().getAll())
 			if (!user.getVideos().contains(g)) {
 				Button btn = new Button(g.getName());
 				btn.setOnAction(comprarJogo());
-				tileGames.getChildren().add(btn);
+				tileVideos.getChildren().add(btn);
 			}
 	}
 
@@ -97,7 +103,7 @@ public class MainController {
 		userGameList.setItems(FXCollections.observableArrayList(userVideos));
 
 		if (user.getVideos().isEmpty()) {
-			lblGameDescription.setText("Você ainda não possui nenhum vídeo, compre hoje mesmo um jogo na nossa loja!");
+			lblGameDescription.setText("Você ainda não possui nenhum vídeo, acesse a loja e adicione a sua lista!");
 			btnRemove.setDisable(true);
 			btnPlay.setDisable(true);
 		} else {
@@ -125,7 +131,7 @@ public class MainController {
 				String gameName = btn.getText();
 				user.getVideos().add(new VideoDAO().get(gameName));
 				new UserDAO().persist(user);
-				updateGamesStore();
+				updateVideosStore();
 			}
 		};
 	}
