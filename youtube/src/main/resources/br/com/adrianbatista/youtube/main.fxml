@@ -207,8 +207,8 @@
                      <children>
                         <GridPane alignment="CENTER" hgap="10.0" vgap="10.0" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="500.0" AnchorPane.topAnchor="0.0">
                           <columnConstraints>
-                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                           </columnConstraints>
                           <rowConstraints>
                             <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
@@ -223,7 +223,7 @@
                               <TextField fx:id="txtNomeVideo" GridPane.columnIndex="1" />
                               <TextField fx:id="txtCatVideo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               <TextField fx:id="txtDescVideo" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <Button fx:id="btnSaveVideo" mnemonicParsing="false" prefWidth="100.0" text="Salvar" GridPane.rowIndex="3" />
+                              <Button fx:id="btnSaveVideo" mnemonicParsing="false" onAction="#addVideo" prefWidth="100.0" text="Salvar" GridPane.rowIndex="3" />
                               <Button fx:id="btnCleanVideo" mnemonicParsing="false" prefWidth="100.0" text="Limpar" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                            </children>
                         </GridPane>
@@ -240,6 +240,9 @@
                            </padding>
                         </VBox>
                      </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
                   </AnchorPane>
                </content>
             </Tab>
