@@ -8,7 +8,6 @@ import java.nio.file.StandardCopyOption;
 import br.com.adrianbatista.youtube.AlertUtil;
 import br.com.adrianbatista.youtube.db.UserDAO;
 import br.com.adrianbatista.youtube.entities.User;
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;

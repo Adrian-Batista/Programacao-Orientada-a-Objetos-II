@@ -15,16 +15,13 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.TilePane;
-import javafx.stage.Stage;
 
 public class MainController {
 
@@ -50,6 +47,19 @@ public class MainController {
 
 	@FXML
 	private Label lblUserInfo;
+	
+	@FXML
+	private Button btnSaveVideo;
+	
+	@FXML
+	private TextField txtNomeVideo;
+	
+	@FXML
+	private TextField txtDescVideo;
+	
+	@FXML
+	private TextField txtCatVideo;
+	
 
 	public void updateUserInfo(User u) {
 		this.user = u;
@@ -92,9 +102,23 @@ public class MainController {
 		for (Video g : new VideoDAO().getAll())
 			if (!user.getVideos().contains(g)) {
 				Button btn = new Button(g.getName());
-				btn.setOnAction(comprarJogo());
+				btn.setOnAction(salvarVideo());
 				tileVideos.getChildren().add(btn);
 			}
+	}
+	
+	@FXML
+	private void addVideo() {
+		
+		String nome = txtNomeVideo.getText();
+		String descricao = txtDescVideo.getText();
+		String categoria = txtCatVideo.getText();
+		
+		Video video = new Video(nome, descricao, categoria);
+		new VideoDAO().persist(video);
+		
+		updateVideosStore();
+		
 	}
 
 	@FXML
@@ -127,7 +151,7 @@ public class MainController {
 		updateLibrary();
 	}
 
-	private EventHandler<ActionEvent> comprarJogo() {
+	private EventHandler<ActionEvent> salvarVideo() {
 		return new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
