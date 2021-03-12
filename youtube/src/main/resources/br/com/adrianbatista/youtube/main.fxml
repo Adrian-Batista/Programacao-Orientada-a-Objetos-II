@@ -224,7 +224,7 @@
                               <TextField fx:id="txtCatVideo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               <TextField fx:id="txtDescVideo" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                               <Button fx:id="btnSaveVideo" mnemonicParsing="false" onAction="#addVideo" prefWidth="100.0" text="Salvar" GridPane.rowIndex="3" />
-                              <Button fx:id="btnCleanVideo" mnemonicParsing="false" prefWidth="100.0" text="Limpar" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Button fx:id="btnCleanVideo" mnemonicParsing="false" onAction="#limpaTxtVideo" prefWidth="100.0" text="Limpar" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                            </children>
                         </GridPane>
                         <VBox alignment="TOP_CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">

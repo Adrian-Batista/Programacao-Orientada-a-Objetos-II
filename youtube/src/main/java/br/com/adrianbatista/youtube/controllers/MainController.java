@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.adrianbatista.youtube.AlertUtil;
 import br.com.adrianbatista.youtube.App;
 import br.com.adrianbatista.youtube.FXMLUtil;
 import br.com.adrianbatista.youtube.db.UserDAO;
@@ -15,6 +16,7 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -114,11 +116,32 @@ public class MainController {
 		String descricao = txtDescVideo.getText();
 		String categoria = txtCatVideo.getText();
 		
+		if (nome.isBlank()) {
+			Alert alert = AlertUtil.error("Erro!", "Erro!", "Digite o Título!", null);
+			alert.showAndWait();
+			return;
+		}
+		if (categoria.isBlank()) {
+			Alert alert = AlertUtil.error("Erro!", "Erro!", "Digite a Categoria!", null);
+			alert.showAndWait();
+			return;
+		}
+		
 		Video video = new Video(nome, descricao, categoria);
 		new VideoDAO().persist(video);
 		
 		updateVideosStore();
 		
+		Alert alert = AlertUtil.info("Sucesso", "Novo Vídeo!", "Cadastro realizado com sucesso");
+		alert.showAndWait();
+		
+	}
+	
+	@FXML
+	private void limpaTxtVideo() {
+		txtNomeVideo.setText("");
+		txtDescVideo.setText("");
+		txtCatVideo.setText("");
 	}
 
 	@FXML
