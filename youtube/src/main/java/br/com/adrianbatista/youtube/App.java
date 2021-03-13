@@ -35,5 +35,9 @@ public class App extends Application {
 		else
 			stage.setResizable(true);
 	}
+	
+	public static void centralized() {
+		stage.centerOnScreen();
+	}
 
 }

@@ -4,6 +4,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JDesktopPane;
+import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
+
 import br.com.adrianbatista.youtube.AlertUtil;
 import br.com.adrianbatista.youtube.App;
 import br.com.adrianbatista.youtube.FXMLUtil;
@@ -68,6 +72,9 @@ public class MainController {
 	@FXML
 	private TextField txtSenhaUser;
 	
+	@FXML
+	private Button btnRemoveUser;
+	
 
 	public void updateUserInfo(User u) {
 		this.user = u;
@@ -92,6 +99,7 @@ public class MainController {
 		FXMLUtil.changeFlatbee(false);
 		App.changeResizable();
 		App.setRoot("login");
+		App.centralized();
 	}
 
 	@FXML
@@ -168,48 +176,26 @@ public class MainController {
 	@FXML
 	private void removeFriend() {
 		
-	}
+	      
+	   }
 
 	// --------------------------------------------- Perfil ---------------------------------------
 	
 	@FXML
-	private ImageView updateImage() throws IOException {
-		RegisterController obj = new RegisterController();
-		return obj.selectImage();
+	private void UpdatePerfil() {
+		
 	}
 	
 	@FXML
-	private void updateProfile() {
-		String email = txtEmailUser.getText();
-	    String senha = txtSenhaUser.getText();
-	    String userImage = updateImage().toString();
-	    
-	    
-	    if (email.isBlank()) {
-			Alert alert = AlertUtil.error("Erro!", "Erro!", "Digite o email que você deseja!", null);
-			alert.showAndWait();
-			return;
-		}
-		if (senha.isBlank()) {
-			Alert alert = AlertUtil.error("Erro!", "Erro!", "Digite a senha!", null);
-			alert.showAndWait();
-			return;
-		}
+	private void removeUser() {
+		UserDAO u = new UserDAO();
+		u.remove(user);
 		
-		User u = new UserDAO().get(email);
-		if (u != null) {
-			Alert alert = AlertUtil.error("Erro!", "Erro!", "E-mail já em uso!", null);
-			alert.showAndWait();
-			return;
-		}
+		AlertUtil.info("Sucesso", "Sucesso", "Cadastro removido com sucesso").show();
 		
-		new UserDAO().persist(new User(email, senha, userImage));
-
-		AlertUtil.info("Sucesso", "Sucesso", "Cadastro realizado com sucesso").show();
-		close();
-	    
+		logout();
 	}
-	
+
 	// -------------------------------------------- ADD Video ----------------------------------------
 	@FXML
 	private void addVideo() {

@@ -70,6 +70,8 @@ public class LoginController {
 		new UserDAO().persist(user);
 		App.changeResizable();
 		App.setRoot("main");
+		App.centralized();
+		
 		MainController controller = FXMLUtil.getMainController();
 		controller.updateUserInfo(user);
 	}
@@ -79,6 +81,7 @@ public class LoginController {
 		Stage stage = new Stage();
 		stage.setScene(FXMLUtil.loadScene("register"));
 		stage.setResizable(false);
+		stage.centerOnScreen();
 		stage.show();
 	}
 
