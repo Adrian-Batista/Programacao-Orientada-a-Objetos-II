@@ -62,6 +62,12 @@ public class MainController {
 	@FXML
 	private TextField txtCatVideo;
 	
+	@FXML
+	private TextField txtEmailUser;
+	
+	@FXML
+	private TextField txtSenhaUser;
+	
 
 	public void updateUserInfo(User u) {
 		this.user = u;
@@ -108,41 +114,6 @@ public class MainController {
 				tileVideos.getChildren().add(btn);
 			}
 	}
-	
-	@FXML
-	private void addVideo() {
-		
-		String nome = txtNomeVideo.getText();
-		String descricao = txtDescVideo.getText();
-		String categoria = txtCatVideo.getText();
-		
-		if (nome.isBlank()) {
-			Alert alert = AlertUtil.error("Erro!", "Erro!", "Digite o Título!", null);
-			alert.showAndWait();
-			return;
-		}
-		if (categoria.isBlank()) {
-			Alert alert = AlertUtil.error("Erro!", "Erro!", "Digite a Categoria!", null);
-			alert.showAndWait();
-			return;
-		}
-		
-		Video video = new Video(nome, descricao, categoria);
-		new VideoDAO().persist(video);
-		
-		updateVideosStore();
-		
-		Alert alert = AlertUtil.info("Sucesso", "Novo Vídeo!", "Cadastro realizado com sucesso");
-		alert.showAndWait();
-		
-	}
-	
-	@FXML
-	private void limpaTxtVideo() {
-		txtNomeVideo.setText("");
-		txtDescVideo.setText("");
-		txtCatVideo.setText("");
-	}
 
 	@FXML
 	private void updateLibrary() {
@@ -185,6 +156,95 @@ public class MainController {
 				updateVideosStore();
 			}
 		};
+	}
+	
+	
+	// ------------------------------------------ Amigos ---------------------------------------
+	@FXML
+	private void addFriend() {
+		
+	}
+	
+	@FXML
+	private void removeFriend() {
+		
+	}
+
+	// --------------------------------------------- Perfil ---------------------------------------
+	
+	@FXML
+	private ImageView updateImage() throws IOException {
+		RegisterController obj = new RegisterController();
+		return obj.selectImage();
+	}
+	
+	@FXML
+	private void updateProfile() {
+		String email = txtEmailUser.getText();
+	    String senha = txtSenhaUser.getText();
+	    String userImage = updateImage().toString();
+	    
+	    
+	    if (email.isBlank()) {
+			Alert alert = AlertUtil.error("Erro!", "Erro!", "Digite o email que você deseja!", null);
+			alert.showAndWait();
+			return;
+		}
+		if (senha.isBlank()) {
+			Alert alert = AlertUtil.error("Erro!", "Erro!", "Digite a senha!", null);
+			alert.showAndWait();
+			return;
+		}
+		
+		User u = new UserDAO().get(email);
+		if (u != null) {
+			Alert alert = AlertUtil.error("Erro!", "Erro!", "E-mail já em uso!", null);
+			alert.showAndWait();
+			return;
+		}
+		
+		new UserDAO().persist(new User(email, senha, userImage));
+
+		AlertUtil.info("Sucesso", "Sucesso", "Cadastro realizado com sucesso").show();
+		close();
+	    
+	}
+	
+	// -------------------------------------------- ADD Video ----------------------------------------
+	@FXML
+	private void addVideo() {
+		
+		String nome = txtNomeVideo.getText();
+		String descricao = txtDescVideo.getText();
+		String categoria = txtCatVideo.getText();
+		
+		if (nome.isBlank()) {
+			Alert alert = AlertUtil.error("Erro!", "Erro!", "Digite o Título!", null);
+			alert.showAndWait();
+			return;
+		}
+		if (categoria.isBlank()) {
+			Alert alert = AlertUtil.error("Erro!", "Erro!", "Digite a Categoria!", null);
+			alert.showAndWait();
+			return;
+		}
+		
+		Video video = new Video(nome, descricao, categoria);
+		new VideoDAO().persist(video);
+		
+		updateVideosStore();
+		
+		Alert alert = AlertUtil.info("Sucesso", "Novo Vídeo!", "Cadastro realizado com sucesso");
+		alert.showAndWait();
+		limpaTxtVideo();
+		
+	}
+	
+	@FXML
+	private void limpaTxtVideo() {
+		txtNomeVideo.setText("");
+		txtDescVideo.setText("");
+		txtCatVideo.setText("");
 	}
 
 }

@@ -33,7 +33,7 @@ public class RegisterController {
 	private Button btnSelectImage;
 	
 	@FXML
-	private void selectImage() throws IOException {
+	public ImageView selectImage() throws IOException {
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("Selecione sua imagem de perfil...");
 		fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JPG", "*.jpg"),
@@ -42,6 +42,8 @@ public class RegisterController {
 		File path = new File("./images/"+selected.getName());
 		Files.copy(selected.toPath(), path.toPath(), StandardCopyOption.REPLACE_EXISTING);		
 		imgUser.setImage(new Image(path.toURI().toString()));
+		
+		return imgUser;
 	}
 
 	@FXML
@@ -76,5 +78,15 @@ public class RegisterController {
 		AlertUtil.info("Sucesso", "Sucesso", "Cadastro realizado com sucesso").show();
 		close();
 	}
+
+	public ImageView getImgUser() {
+		return imgUser;
+	}
+
+	public void setImgUser(ImageView imgUser) {
+		this.imgUser = imgUser;
+	}
+	
+	
 
 }
