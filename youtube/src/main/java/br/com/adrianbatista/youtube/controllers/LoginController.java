@@ -71,6 +71,7 @@ public class LoginController {
 		App.changeResizable();
 		App.setRoot("main");
 		App.centralized();
+		App.fullScreen(true);
 		
 		MainController controller = FXMLUtil.getMainController();
 		controller.updateUserInfo(user);

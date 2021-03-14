@@ -39,5 +39,9 @@ public class App extends Application {
 	public static void centralized() {
 		stage.centerOnScreen();
 	}
+	
+	public static void fullScreen(Boolean opc) {
+		stage.setMaximized(opc);
+	}
 
 }

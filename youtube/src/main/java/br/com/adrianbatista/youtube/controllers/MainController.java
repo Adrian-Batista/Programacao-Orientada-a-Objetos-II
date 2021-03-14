@@ -4,10 +4,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JDesktopPane;
-import javax.swing.JFrame;
-import javax.swing.JInternalFrame;
-
 import br.com.adrianbatista.youtube.AlertUtil;
 import br.com.adrianbatista.youtube.App;
 import br.com.adrianbatista.youtube.FXMLUtil;
@@ -37,7 +33,7 @@ public class MainController {
 	private TilePane tileVideos;
 
 	@FXML
-	private ListView<String> userGameList;
+	private ListView<String> userVideoList;
 
 	@FXML
 	private Button btnPlay;
@@ -46,7 +42,7 @@ public class MainController {
 	private Button btnRemove;
 
 	@FXML
-	private Label lblGameDescription;
+	private Label lblVideoDescription;
 
 	@FXML
 	private ImageView imgUser;
@@ -75,6 +71,12 @@ public class MainController {
 	@FXML
 	private Button btnRemoveUser;
 	
+	@FXML
+	private Label nomeUser;
+	
+	@FXML
+	private ImageView imgUser1;
+	
 
 	public void updateUserInfo(User u) {
 		this.user = u;
@@ -83,14 +85,14 @@ public class MainController {
 			Image image = new Image(user.getUserImage());
 			imgUser.setImage(image);
 		}
-		lblUserInfo.setText("Olá " + user.getUsername());
+		lblUserInfo.setText("Seja Bem Vindo,  " + user.getUsername());
 	}
 
 	@FXML
 	private void updateDescription() {
-		String videoName = userGameList.getSelectionModel().getSelectedItem();
+		String videoName = userVideoList.getSelectionModel().getSelectedItem();
 		Video video = new VideoDAO().get(videoName);
-		lblGameDescription.setText("Categoria: " + video.getDescription());
+		lblVideoDescription.setText("Categoria: " + video.getDescription());
 	}
 
 	@FXML
@@ -100,6 +102,7 @@ public class MainController {
 		App.changeResizable();
 		App.setRoot("login");
 		App.centralized();
+		
 	}
 
 	@FXML
@@ -130,14 +133,14 @@ public class MainController {
 		List<String> userVideos = new ArrayList<>();
 		for (Video g : user.getVideos())
 			userVideos.add(g.getName());
-		userGameList.setItems(FXCollections.observableArrayList(userVideos));
+		userVideoList.setItems(FXCollections.observableArrayList(userVideos));
 
 		if (user.getVideos().isEmpty()) {
-			lblGameDescription.setText("Você ainda não possui nenhum vídeo, acesse a loja e adicione a sua lista!");
+			lblVideoDescription.setText("Você ainda não possui nenhum vídeo, acesse a loja e adicione a sua lista!");
 			btnRemove.setDisable(true);
 			btnPlay.setDisable(true);
 		} else {
-			userGameList.getSelectionModel().select(0);
+			userVideoList.getSelectionModel().select(0);
 			btnRemove.setDisable(false);
 			btnPlay.setDisable(false);
 			updateDescription();
@@ -146,7 +149,7 @@ public class MainController {
 
 	@FXML
 	private void remove() {
-		String videoName = userGameList.getSelectionModel().getSelectedItem();
+		String videoName = userVideoList.getSelectionModel().getSelectedItem();
 		Video video = new VideoDAO().get(videoName);
 		user.getVideos().remove(video);
 		new UserDAO().persist(user);
@@ -182,8 +185,12 @@ public class MainController {
 	// --------------------------------------------- Perfil ---------------------------------------
 	
 	@FXML
-	private void UpdatePerfil() {
-		
+	private void updateUser() {
+		if (!user.getUserImage().isBlank()) {
+			Image image = new Image(user.getUserImage());
+			imgUser1.setImage(image);
+		}
+		nomeUser.setText(user.getUsername());
 	}
 	
 	@FXML
