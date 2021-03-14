@@ -46,7 +46,7 @@
       </MenuBar>
       <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
          <children>
-            <ImageView fx:id="imgUser" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" rotate="90.0" HBox.hgrow="ALWAYS">
+            <ImageView fx:id="imgUser" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                <HBox.margin>
                   <Insets left="35.0" top="20.0" />
                </HBox.margin>

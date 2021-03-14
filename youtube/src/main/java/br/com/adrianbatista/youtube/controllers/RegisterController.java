@@ -42,6 +42,7 @@ public class RegisterController {
 		File path = new File("./images/"+selected.getName());
 		Files.copy(selected.toPath(), path.toPath(), StandardCopyOption.REPLACE_EXISTING);		
 		imgUser.setImage(new Image(path.toURI().toString()));
+		imgUser.setRotate(imgUser.getRotate()+90);
 		
 		return imgUser;
 	}

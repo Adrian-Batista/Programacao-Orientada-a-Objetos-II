@@ -98,6 +98,8 @@ public class MainController {
 		if (!user.getUserImage().isBlank()) {
 			Image image = new Image(user.getUserImage());
 			imgUser.setImage(image);
+			if(imgUser.getRotate() == 0)
+				imgUser.setRotate(imgUser.getRotate()+90);
 		}
 		lblUserInfo.setText("Seja Bem Vindo,  " + user.getUsername());
 	}
