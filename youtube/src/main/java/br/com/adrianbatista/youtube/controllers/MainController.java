@@ -76,16 +76,16 @@ public class MainController {
 
 	@FXML
 	private Label lblQntVideos;
-	
+
 	@FXML
 	private ListView<String> userFriendAddList;
-	
+
 	@FXML
 	private ListView<String> userFriendRemoveList;
-	
+
 	@FXML
 	private Button btnRemoveFriend;
-	
+
 	@FXML
 	private Button btnAddFriend;
 
@@ -136,7 +136,7 @@ public class MainController {
 	private void updateDescription() {
 		String videoName = userVideoList.getSelectionModel().getSelectedItem();
 		Video video = new VideoDAO().get(videoName);
-		lblVideoDescription.setText("Categoria: " + video.getDescription());
+		lblVideoDescription.setText(" - Categoria : "+ video.getCategory() + "\n - Descrição : " + video.getDescription());
 	}
 
 	@FXML
@@ -184,28 +184,28 @@ public class MainController {
 	}
 
 	// ------------------------------------------ Amigos ---------------------------------------
-	
-//	@FXML
-//	private List<String> updateListFriend() {
-//		if (user == null)
-//			return null;
-//		List<String> userFriends = new ArrayList<>();
-//		for (Amigos g : user.getAmigos()) {
-//			// montar um 
-//			userFriends.add(g.getNome());
-//		}
-//		userFriendAddList.setItems(FXCollections.observableArrayList(userFriends));
-//
-//		if (!user.getAmigos().isEmpty()) {
-//			userFriendAddList.getSelectionModel().select(0);
-//			btnAddFriend.setDisable(false);
-//			btnRemoveFriend.setDisable(false);
-//			updateDescription();
-//		}
-//
-//		return userFriends;
-//	}
-	
+
+	//	@FXML
+	//	private List<String> updateListFriend() {
+	//		if (user == null)
+	//			return null;
+	//		List<String> userFriends = new ArrayList<>();
+	//		for (Amigos g : user.getAmigos()) {
+	//			// montar um 
+	//			userFriends.add(g.getNome());
+	//		}
+	//		userFriendAddList.setItems(FXCollections.observableArrayList(userFriends));
+	//
+	//		if (!user.getAmigos().isEmpty()) {
+	//			userFriendAddList.getSelectionModel().select(0);
+	//			btnAddFriend.setDisable(false);
+	//			btnRemoveFriend.setDisable(false);
+	//			updateDescription();
+	//		}
+	//
+	//		return userFriends;
+	//	}
+
 	@FXML
 	private void addFriend() {
 

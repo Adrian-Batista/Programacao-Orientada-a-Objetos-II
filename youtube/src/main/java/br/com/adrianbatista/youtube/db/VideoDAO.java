@@ -20,8 +20,8 @@ public class VideoDAO implements InterfaceDAO<Video> {
 			em.getTransaction().rollback();
 			Video original = get(t.getName());
 			em.getTransaction().begin();
-			original.setDescription(t.getDescription());
 			original.setCategory(t.getCategory());
+			original.setDescription(t.getDescription());
 			em.getTransaction().commit();
 		}
 	}

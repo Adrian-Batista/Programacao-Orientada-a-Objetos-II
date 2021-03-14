@@ -27,10 +27,10 @@ public class LoginController {
 
 	@FXML
 	private ToggleSwitch togglSaveLogin;
-	
+
 	@FXML
 	private ToggleSwitch togglFlatbee;
-	
+
 	@FXML
 	public void login() {
 		String email = txtEmail.getText();
@@ -61,18 +61,18 @@ public class LoginController {
 			user.setSaveLogin(true);
 		else
 			user.setSaveLogin(false);
-		
+
 		if(togglFlatbee.isSelected())
 			FXMLUtil.changeFlatbee(true);
 		else
 			FXMLUtil.changeFlatbee(false);
-		
+
 		new UserDAO().persist(user);
 		App.changeResizable();
 		App.setRoot("main");
 		App.centralized();
 		App.fullScreen(true);
-		
+
 		MainController controller = FXMLUtil.getMainController();
 		controller.updateUserInfo(user);
 	}

@@ -20,6 +20,8 @@ public class PlayerController {
 	private void retornar() {
 		Stage stage = (Stage) btnPlay.getScene().getWindow();
 		stage.close();
+		LoginController obj = new LoginController();
+		obj.login();
 	}
 
 }
