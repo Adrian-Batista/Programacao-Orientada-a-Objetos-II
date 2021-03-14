@@ -179,7 +179,7 @@
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
                         </GridPane>
-                        <Button fx:id="btnRemoveUser" alignment="CENTER" layoutX="690.0" layoutY="544.0" mnemonicParsing="false" onAction="#removeUser" text="Remove Account" />
+                        <Button fx:id="btnRemoveUser" alignment="CENTER" layoutX="690.0" layoutY="544.0" mnemonicParsing="false" onAction="#removeUser" text="Remove Account" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0" />
                      </children>
                   </AnchorPane>
                </content>
