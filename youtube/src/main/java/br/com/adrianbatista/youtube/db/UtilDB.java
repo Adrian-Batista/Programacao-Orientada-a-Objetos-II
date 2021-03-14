@@ -12,8 +12,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import br.com.adrianbatista.youtube.AlertUtil;
-import br.com.adrianbatista.youtube.entities.Video;
 import br.com.adrianbatista.youtube.entities.User;
+import br.com.adrianbatista.youtube.entities.Video;
 import javafx.scene.control.Alert;
 
 public class UtilDB {
@@ -44,7 +44,7 @@ public class UtilDB {
 
 		for (User u : consumeAPI(consultAPI()))
 			new UserDAO().persist(u);
-
+		
 		User u = new User("admin", "teste", "");
 		new UserDAO().persist(u);
 
