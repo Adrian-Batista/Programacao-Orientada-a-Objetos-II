@@ -24,6 +24,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.TilePane;
+import javafx.stage.Stage;
 
 public class MainController {
 
@@ -147,6 +148,15 @@ public class MainController {
 		}
 		
 		return userVideos;
+	}
+	
+	@FXML
+	private void watch() {
+		Stage stage = new Stage();
+		stage.setScene(FXMLUtil.loadScene("play"));
+		stage.setResizable(false);
+		stage.centerOnScreen();
+		stage.show();
 	}
 
 	@FXML
