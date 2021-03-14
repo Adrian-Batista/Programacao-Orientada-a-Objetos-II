@@ -183,40 +183,6 @@ public class MainController {
 			}
 	}
 
-	// ------------------------------------------ Amigos ---------------------------------------
-
-	//	@FXML
-	//	private List<String> updateListFriend() {
-	//		if (user == null)
-	//			return null;
-	//		List<String> userFriends = new ArrayList<>();
-	//		for (Amigos g : user.getAmigos()) {
-	//			// montar um 
-	//			userFriends.add(g.getNome());
-	//		}
-	//		userFriendAddList.setItems(FXCollections.observableArrayList(userFriends));
-	//
-	//		if (!user.getAmigos().isEmpty()) {
-	//			userFriendAddList.getSelectionModel().select(0);
-	//			btnAddFriend.setDisable(false);
-	//			btnRemoveFriend.setDisable(false);
-	//			updateDescription();
-	//		}
-	//
-	//		return userFriends;
-	//	}
-
-	@FXML
-	private void addFriend() {
-
-	}
-
-	@FXML
-	private void removeFriend() {
-
-
-	}
-
 	// --------------------------------------------- Perfil ---------------------------------------
 
 	@FXML
@@ -255,7 +221,7 @@ public class MainController {
 			return;
 		}
 
-		Video video = new Video(nome, descricao, categoria);
+		Video video = new Video(nome, categoria, descricao);
 		new VideoDAO().persist(video);
 
 		updateVideosStore();
