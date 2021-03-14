@@ -160,25 +160,26 @@
                <content>
                   <AnchorPane>
                      <children>
-                        <GridPane hgap="10.0" vgap="10.0" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="500.0" AnchorPane.topAnchor="0.0">
+                        <GridPane alignment="CENTER" hgap="15.0" vgap="15.0" AnchorPane.bottomAnchor="500.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="600.0" AnchorPane.topAnchor="0.0">
                           <columnConstraints>
-                            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" />
+                            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" />
                           </columnConstraints>
                           <rowConstraints>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Label text="Foto de perfil: " />
-                              <Label text="E-mail do Usuario: " GridPane.rowIndex="1" />
-                              <Label text="Categorias de interesse: " GridPane.rowIndex="2" />
-                              <ImageView fx:id="imgUser1" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
-                              <Label fx:id="nomeUser" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="E-mail do Usuario: " />
+                              <Label fx:id="nomeUser" text="Label" GridPane.columnIndex="1" />
+                              <Label text="Número de vídeos salvos:" GridPane.rowIndex="1" />
+                              <Label fx:id="lblQntVideos" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                            </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
                         </GridPane>
-                        <Button fx:id="btnRemoveUser" alignment="CENTER" layoutX="833.0" layoutY="592.0" mnemonicParsing="false" onAction="#removeUser" text="Remove Account" />
+                        <Button fx:id="btnRemoveUser" alignment="CENTER" layoutX="690.0" layoutY="544.0" mnemonicParsing="false" onAction="#removeUser" text="Remove Account" />
                      </children>
                   </AnchorPane>
                </content>

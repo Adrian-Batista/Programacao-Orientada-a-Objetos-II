@@ -75,7 +75,7 @@ public class MainController {
 	private Label nomeUser;
 	
 	@FXML
-	private ImageView imgUser1;
+	private Label lblQntVideos;
 	
 
 	public void updateUserInfo(User u) {
@@ -127,9 +127,9 @@ public class MainController {
 	}
 
 	@FXML
-	private void updateLibrary() {
+	private List<String> updateLibrary() {
 		if (user == null)
-			return;
+			return null;
 		List<String> userVideos = new ArrayList<>();
 		for (Video g : user.getVideos())
 			userVideos.add(g.getName());
@@ -145,6 +145,8 @@ public class MainController {
 			btnPlay.setDisable(false);
 			updateDescription();
 		}
+		
+		return userVideos;
 	}
 
 	@FXML
@@ -186,11 +188,11 @@ public class MainController {
 	
 	@FXML
 	private void updateUser() {
-		if (!user.getUserImage().isBlank()) {
-			Image image = new Image(user.getUserImage());
-			imgUser1.setImage(image);
-		}
 		nomeUser.setText(user.getUsername());
+		String qnt = String.valueOf(updateLibrary().size());
+		lblQntVideos.setText(qnt);
+		
+		
 	}
 	
 	@FXML
