@@ -1,9 +1,9 @@
 package br.com.adrianbatista.youtube.controllers;
 
 
-import br.com.adrianbatista.youtube.App;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 public class PlayerController {
 	
@@ -18,7 +18,8 @@ public class PlayerController {
 	
 	@FXML
 	private void retornar() {
-		App.setRoot("main");
+		Stage stage = (Stage) btnPlay.getScene().getWindow();
+		stage.close();
 	}
 
 }

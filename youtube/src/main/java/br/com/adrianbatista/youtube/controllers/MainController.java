@@ -1,6 +1,5 @@
 package br.com.adrianbatista.youtube.controllers;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,34 +49,36 @@ public class MainController {
 
 	@FXML
 	private Label lblUserInfo;
-	
+
 	@FXML
 	private Button btnSaveVideo;
-	
+
 	@FXML
 	private TextField txtNomeVideo;
-	
+
 	@FXML
 	private TextField txtDescVideo;
-	
+
 	@FXML
 	private TextField txtCatVideo;
-	
+
 	@FXML
 	private TextField txtEmailUser;
-	
+
 	@FXML
 	private TextField txtSenhaUser;
-	
+
 	@FXML
 	private Button btnRemoveUser;
-	
+
 	@FXML
 	private Label nomeUser;
-	
+
 	@FXML
 	private Label lblQntVideos;
-	
+
+
+	// ------------------------------ TÍTULO -----------------------------------
 
 	public void updateUserInfo(User u) {
 		this.user = u;
@@ -89,43 +90,12 @@ public class MainController {
 		lblUserInfo.setText("Seja Bem Vindo,  " + user.getUsername());
 	}
 
-	@FXML
-	private void updateDescription() {
-		String videoName = userVideoList.getSelectionModel().getSelectedItem();
-		Video video = new VideoDAO().get(videoName);
-		lblVideoDescription.setText("Categoria: " + video.getDescription());
-	}
 
-	@FXML
-	private void logout() {
-		user = null;
-		FXMLUtil.changeFlatbee(false);
-		App.changeResizable();
-		App.setRoot("login");
-		App.centralized();
-		
-	}
 
-	@FXML
-	private void exit() {
-		Platform.exit();
-	}
-	
-	@FXML
-	private void play() throws IOException {
-		
-	}
 
-	@FXML
-	private void updateVideosStore() {
-		tileVideos.getChildren().clear();
-		for (Video g : new VideoDAO().getAll())
-			if (!user.getVideos().contains(g)) {
-				Button btn = new Button(g.getName());
-				btn.setOnAction(salvarVideo());
-				tileVideos.getChildren().add(btn);
-			}
-	}
+
+
+	// ------------------------------------- Meus Vídeos --------------------------------------------------- 
 
 	@FXML
 	private List<String> updateLibrary() {
@@ -146,10 +116,17 @@ public class MainController {
 			btnPlay.setDisable(false);
 			updateDescription();
 		}
-		
+
 		return userVideos;
 	}
-	
+
+	@FXML
+	private void updateDescription() {
+		String videoName = userVideoList.getSelectionModel().getSelectedItem();
+		Video video = new VideoDAO().get(videoName);
+		lblVideoDescription.setText("Categoria: " + video.getDescription());
+	}
+
 	@FXML
 	private void watch() {
 		Stage stage = new Stage();
@@ -180,49 +157,59 @@ public class MainController {
 			}
 		};
 	}
-	
-	
+
+	// ----------------------------------- Store ------------------------------
+
+	@FXML
+	private void updateVideosStore() {
+		tileVideos.getChildren().clear();
+		for (Video g : new VideoDAO().getAll())
+			if (!user.getVideos().contains(g)) {
+				Button btn = new Button(g.getName());
+				btn.setOnAction(salvarVideo());
+				tileVideos.getChildren().add(btn);
+			}
+	}
+
 	// ------------------------------------------ Amigos ---------------------------------------
 	@FXML
 	private void addFriend() {
-		
+
 	}
-	
+
 	@FXML
 	private void removeFriend() {
-		
-	      
-	   }
+
+
+	}
 
 	// --------------------------------------------- Perfil ---------------------------------------
-	
+
 	@FXML
 	private void updateUser() {
 		nomeUser.setText(user.getUsername());
 		String qnt = String.valueOf(updateLibrary().size());
 		lblQntVideos.setText(qnt);
-		
-		
 	}
-	
+
 	@FXML
 	private void removeUser() {
 		UserDAO u = new UserDAO();
 		u.remove(user);
-		
+
 		AlertUtil.info("Sucesso", "Sucesso", "Cadastro removido com sucesso").show();
-		
+
 		logout();
 	}
 
 	// -------------------------------------------- ADD Video ----------------------------------------
 	@FXML
 	private void addVideo() {
-		
+
 		String nome = txtNomeVideo.getText();
 		String descricao = txtDescVideo.getText();
 		String categoria = txtCatVideo.getText();
-		
+
 		if (nome.isBlank()) {
 			Alert alert = AlertUtil.error("Erro!", "Erro!", "Digite o Título!", null);
 			alert.showAndWait();
@@ -233,18 +220,17 @@ public class MainController {
 			alert.showAndWait();
 			return;
 		}
-		
+
 		Video video = new Video(nome, descricao, categoria);
 		new VideoDAO().persist(video);
-		
+
 		updateVideosStore();
-		
+
 		Alert alert = AlertUtil.info("Sucesso", "Novo Vídeo!", "Cadastro realizado com sucesso");
 		alert.showAndWait();
 		limpaTxtVideo();
-		
 	}
-	
+
 	@FXML
 	private void limpaTxtVideo() {
 		txtNomeVideo.setText("");
@@ -252,4 +238,19 @@ public class MainController {
 		txtCatVideo.setText("");
 	}
 
+	// --------------------------------------------- Exit -----------------------------------
+
+	@FXML
+	private void logout() {
+		user = null;
+		FXMLUtil.changeFlatbee(false);
+		App.changeResizable();
+		App.setRoot("login");
+		App.centralized();
+	}
+
+	@FXML
+	private void exit() {
+		Platform.exit();
+	}
 }
