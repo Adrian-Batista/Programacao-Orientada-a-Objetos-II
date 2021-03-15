@@ -29,7 +29,15 @@ public class UsersInFile {
 
 		// processamento
 		List<User> userList = UtilDB.consumeAPI(fileLines);
-		for (User u : userList)
-			new UserDAO().persist(u);
+		for (User t : userList) {
+			User existingTeacher = new UserDAO().get(t.getUsername());
+			if (existingTeacher != null) {
+				if (!t.getUsername().contentEquals(existingTeacher.getUsername())) {
+					new UserDAO().persist(t);
+				}
+			} else {
+				new UserDAO().persist(t);
+			}
+		}
 	}
 }

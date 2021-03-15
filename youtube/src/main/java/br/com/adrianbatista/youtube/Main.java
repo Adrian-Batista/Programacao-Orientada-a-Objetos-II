@@ -1,5 +1,6 @@
 package br.com.adrianbatista.youtube;
 
+import br.com.adrianbatista.youtube.db.PersisteDB;
 import br.com.adrianbatista.youtube.db.UsersInFile;
 import br.com.adrianbatista.youtube.db.UtilDB;
 import javafx.application.Application;
@@ -10,6 +11,10 @@ public class Main {
 
 		Thread connection = new Thread(new TestConnection());
 		App.setConnection(connection);
+		
+		Thread FileToDB = new Thread(new PersisteDB());
+		App.setFileToDB(FileToDB);
+		
 		System.out.println("A thread da classe Main está executando...");
 		System.out.println("O banco de dados será inicializado...");
 		UtilDB.initDB();

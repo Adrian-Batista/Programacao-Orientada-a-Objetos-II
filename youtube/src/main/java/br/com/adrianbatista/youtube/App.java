@@ -10,6 +10,8 @@ public class App extends Application {
 
 	private static Stage stage;
 	private static Thread connection;
+	private static Thread FileToDB;
+
 
 	@Override
 	public void start(Stage stge) {
@@ -18,7 +20,13 @@ public class App extends Application {
 		changeResizable();
 		stage.setTitle("YouTube");
 		stage.show();
+		
+		FileToDB.start();
 		connection.start();
+	}
+	
+	public static void setFileToDB(Thread FileToDB) {
+		App.FileToDB = FileToDB;
 	}
 
 	public static void setConnection(Thread connection) {

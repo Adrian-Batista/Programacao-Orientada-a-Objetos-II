@@ -49,10 +49,14 @@ public class UtilDB {
 		new UserDAO().persist(u);
 
 		Video cs = new Video("FUNDAMENTOS de JAVASCRIPT & HTML", "Programação" , "Aprenda os Fundamentos do JavaScript..");
-		Video nfs = new Video("A Primeira Aula de Flutter Que Todo Mundo Deveria Ter", "Programação" , "Flutter atualizado clique e saiba mais...");
 		new VideoDAO().persist(cs);
+		
+		Video nfs = new Video("A Primeira Aula de Flutter Que Todo Mundo Deveria Ter", "Programação" , "Flutter atualizado clique e saiba mais...");
 		new VideoDAO().persist(nfs);
-
+		
+//		Video nfs2 = new Video("A Primeira Aula de Flutter Que Todo Mundo Deveria Ter", "Programação" , "Flutter atualizado clique e saiba mais...");
+//		new VideoDAO().persist(nfs2);
+		
 		u.getVideos().add(cs);
 		new UserDAO().persist(u);
 	}
