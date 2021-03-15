@@ -7,7 +7,9 @@ public class PersisteDB implements Runnable{
 		UsersInFile userInFile = new UsersInFile();
 		try {
 			while (true) {
+				System.out.println("Testando os dados DB...");
 				userInFile.check();
+				System.out.println("Dados atualizados!");
 				Thread.sleep(4200);
 			}
 		} catch (Exception e) {
